@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const items = document.querySelectorAll("li[data-img]");
+  const items = document.querySelectorAll("li[data-img], span[data-img]");
   const preview = document.getElementById("preview");
   const previewImg = document.getElementById("preview-img");
 
@@ -45,4 +45,22 @@ document.addEventListener("DOMContentLoaded", () => {
     preview.style.left = left + "px";
     preview.style.top = top + "px";
   }
+
+  // Value Tabs Functionality
+  const valueTabs = document.querySelectorAll('.value-tab');
+  const valueContents = document.querySelectorAll('.value-content');
+
+  valueTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetValue = tab.dataset.value;
+      
+      // Remove active class from all tabs and contents
+      valueTabs.forEach(t => t.classList.remove('active'));
+      valueContents.forEach(c => c.classList.remove('active'));
+      
+      // Add active class to clicked tab and corresponding content
+      tab.classList.add('active');
+      document.querySelector(`.value-content[data-content="${targetValue}"]`).classList.add('active');
+    });
+  });
 });

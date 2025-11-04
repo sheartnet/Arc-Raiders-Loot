@@ -39,6 +39,57 @@ h1 {
   font-weight: 700;
 }
 
+/* NAVEGACIÓN PRINCIPAL */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: rgba(15, 20, 30, 0.6);
+  border-bottom: 2px solid rgba(102, 204, 255, 0.2);
+}
+
+.nav-btn {
+  background: linear-gradient(145deg, rgba(26, 35, 50, 0.8) 0%, rgba(21, 28, 38, 0.9) 100%);
+  color: #d4dae3;
+  border: 2px solid rgba(102, 204, 255, 0.3);
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.nav-btn:hover {
+  background: linear-gradient(145deg, rgba(36, 45, 60, 0.9) 0%, rgba(31, 38, 48, 1) 100%);
+  border-color: rgba(255, 170, 0, 0.6);
+  box-shadow: 0 0 15px rgba(255, 170, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.nav-btn.active {
+  background: linear-gradient(145deg, rgba(255, 170, 0, 0.15) 0%, rgba(102, 204, 255, 0.15) 100%);
+  border-color: rgba(255, 170, 0, 0.8);
+  color: #ffaa00;
+  box-shadow: 0 0 20px rgba(255, 170, 0, 0.4), inset 0 0 10px rgba(255, 170, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+    padding: 0.75rem 1rem;
+  }
+  
+  .nav-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
 .grid {
   display: flex;
   gap: 1.5rem;
@@ -266,6 +317,10 @@ span[data-img]:hover {
 
 .rarity-e {
   color: #cc88ff; /* Lila */
+}
+
+.rarity-l {
+  color: #d4af37; /* Dorado/Amarillo oscuro para Legendary */
 }
 
 #preview {

@@ -797,14 +797,32 @@
       if (confirm('¿Estás seguro de que quieres resetear el progreso de esta sección?')) {
         let progress = loadProgress();
         
-        // Eliminar solo los items de esta sección
+        // Eliminar items normales (li) de esta sección
         document.querySelectorAll(`#${sectionId} li[data-item-id]`).forEach(item => {
           const itemId = item.getAttribute('data-item-id');
           delete progress[itemId];
+          
+          // Resetear visualmente
+          const counter = item.querySelector('.item-counter');
+          if (counter) counter.textContent = '0';
+          item.style.opacity = '1';
+          item.style.textDecoration = 'none';
         });
         
+        // Eliminar categorías de carga de esta sección
+        document.querySelectorAll(`#${sectionId} .cargo-category[data-item-id]`).forEach(category => {
+          const itemId = category.getAttribute('data-item-id');
+          delete progress[itemId];
+          
+          // Resetear visualmente
+          const counter = category.querySelector('.item-counter');
+          if (counter) counter.textContent = '0';
+          const maxAmount = parseInt(category.getAttribute('data-max')) || 1;
+          updateProgressBar(itemId, 0, maxAmount);
+        });
+        
+        // Guardar cambios en cookies
         setCookie(COOKIE_NAME, encodeURIComponent(JSON.stringify(progress)), COOKIE_EXPIRY_DAYS);
-        loadPage(document.querySelector('.nav-btn.active').getAttribute('data-page').replace('.html', ''));
       }
     }
     
@@ -916,8 +934,19 @@
       const navButtons = document.querySelectorAll('.nav-btn');
       const contentContainer = document.getElementById('content-container');
       
-      // Cargar la primera página por defecto
-      loadPage('quest');
+      // Cargar la última página visitada o 'quest' por defecto
+      const lastPage = localStorage.getItem('arc_raiders_active_tab') || 'quest';
+      loadPage(lastPage);
+      
+      // Marcar el botón correcto como activo
+      navButtons.forEach(btn => {
+        const btnPage = btn.getAttribute('data-page').replace('.html', '');
+        if (btnPage === lastPage) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
       
       navButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -925,6 +954,7 @@
           this.classList.add('active');
           
           const page = this.getAttribute('data-page').replace('.html', '');
+          localStorage.setItem('arc_raiders_active_tab', page);
           loadPage(page);
         });
       });

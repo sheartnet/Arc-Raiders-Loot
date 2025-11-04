@@ -1,0 +1,53 @@
+MISIONES QUE REQUIEREN RECOLECTAR ITEMS:
+
+Misión 2 - Clearer Skies:
+- Get 3 ARC Alloy for Shani
+
+Misión 3 - Trash Into Treasure:
+- Collect 6 Wires
+- Collect a Battery
+
+Misión 7 - Hatch Repairs:
+- Search for a Hatch Key near the Raider Hatch
+
+Misión 10 - The Trifecta:
+- Destroy a Wasp and get a Wasp Driver for Shani
+- Destroy a Hornet and get a Hornet Driver for Shani
+- Destroy a Snitch and get a Snitch Scanner for Shani
+
+Misión 17 - Mixed Signals:
+- Destroy an ARC Surveyor
+- Obtain 1 Surveyor Vault
+
+Misión 19 - Doctor's Orders:
+- Obtain 2 Antiseptic
+- Obtain 1 Syringe
+- Obtain 1 Durable Cloth
+- Obtain 1 Great Mullein
+
+Misión 22 - Broken Monument:
+- Search for a compass near the broken-down vehicles
+- Search for the video tape near the cylindrical containers
+- Search for the old field rations in the Raider camp
+- Deliver the First Wave Tape to Tian Wen
+- Deliver First Wave Compass to Tian Wen
+- Deliver First Wave Rations to Tian Wen
+
+Misión 25 - A Lay of the Land:
+- Deliver 1 LiDAR Scanners to Shani
+
+Misión 30 - Eyes on the Prize:
+- Rewire the solar panel using 3 Wires
+
+Misión 33 - Unexpected Initiative:
+- Search for Fertilizer on the rooftop of the Grandioso Apartments
+- Search for a Water Pump in the broken rooftop gardens at Piazza Roma
+- Deliver a Water Pump to Tian Wen
+- Deliver Fertilizer to Tian Wen
+
+Misión 38 - Out of the Shadows:
+- Destroy a Rocketeer
+- Obtain a Rocketeer Driver
+
+Misión 42 - After Rain Comes:
+- Repair the solar panels using 5 Wires and 2 Batteries

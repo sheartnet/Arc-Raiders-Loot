@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -11,489 +11,73 @@
     <h1>ARC RAIDERS — Guía Esencial de Objetos</h1>
   </header>
 
-  <main class="grid">
+  <!-- NAVEGACIÓN PRINCIPAL -->
+  <nav class="main-nav">
+    <button class="nav-btn active" data-page="quest.html">Objetos de Misión</button>
+    <button class="nav-btn" data-page="recyclables.html">Fuentes Reciclables</button>
+    <button class="nav-btn" data-page="workshops.html">Estaciones de Taller</button>
+    <button class="nav-btn" data-page="highvalue.html">Objetos de Alto Valor</button>
+  </nav>
 
-    <!-- COLUMNA 1 -->
-    <div>
-      <!-- CRITICAL QUEST ITEMS -->
+  <main id="content-container">
+    <!-- El contenido se cargará dinámicamente aquí -->
+  </main>
+
+  <!-- Preview de imagen -->
+  <div id="preview">
+    <img src="" alt="Preview">
+  </div>
+
+  <!-- CONTENIDO EMBEBIDO -->
+  <script type="text/template" id="quest-content">
+    <!-- OBJETOS DE MISIÓN -->
+    <section class="card" style="max-width: 600px; margin: 2rem auto;">
+      <h2>Objetos de Misión</h2>
+      <ul>
+        <li class="rarity-u" data-img="ARC_Alloy.png">Misión 2 (Clearer Skies) - Aleación ARC: x 3</li>
+        <li class="rarity-u" data-img="Wires.png">Misión 3 (Trash Into Treasure) - Cables: x 6</li>
+        <li class="rarity-u" data-img="Battery.png">Misión 3 (Trash Into Treasure) - Batería: x 1</li>
+        <li class="rarity-r" data-img="Wasp_Driver.png">Misión 10 (The Trifecta) - Controlador de Avispa: x 2</li>
+        <li class="rarity-r" data-img="Hornet_Driver.png">Misión 10 (The Trifecta) - Controlador de Avispón: x 2</li>
+        <li class="rarity-u" data-img="Snitch_Scanner.png">Misión 10 (The Trifecta) - Escáner Soplón: x 2</li>
+        <li class="rarity-r" data-img="Surveyor_Vault.png">Misión 17 (Mixed Signals) - Depósito de Vigilante: x 1</li>
+        <li class="rarity-r" data-img="Antiseptic.png">Misión 19 (Doctor's Orders) - Antiséptico: x 2</li>
+        <li class="rarity-r" data-img="Syringe.png">Misión 19 (Doctor's Orders) - Jeringa: x 1</li>
+        <li class="rarity-u" data-img="Durable_Cloth.png">Misión 19 (Doctor's Orders) - Tela Resistente: x 1</li>
+        <li class="rarity-u" data-img="Great_Mullein.png">Misión 19 (Doctor's Orders) - Gran Gordolobo: x 1</li>
+        <li class="rarity-r" data-img="">Misión 21 (A Reveal in Ruins) - Analizador ESR: x 1</li>
+        <li class="rarity-r" data-img="">Misión 22 (Broken Monument) - Cinta de la Primera Ola: x 1</li>
+        <li class="rarity-r" data-img="">Misión 22 (Broken Monument) - Brújula de la Primera Ola: x 1</li>
+        <li class="rarity-r" data-img="">Misión 22 (Broken Monument) - Raciones de la Primera Ola: x 1</li>
+        <li class="rarity-r" data-img="">Misión 25 (A Lay of the Land) - Escáneres LiDAR: x 1</li>
+        <li class="rarity-u" data-img="Wires.png">Misión 30 (Eyes on the Prize) - Cables: x 3</li>
+        <li class="rarity-u" data-img="Fertilizer.png">Misión 33 (Unexpected Initiative) - Fertilizante: x 1</li>
+        <li class="rarity-r" data-img="Water_Pump.png">Misión 33 (Unexpected Initiative) - Bomba de Agua: x 1</li>
+        <li class="rarity-r" data-img="">Misión 35 (Celeste's Journals) - Diario de Celeste: x 2</li>
+        <li class="rarity-r" data-img="">Misión 37 (The Major's Footlocker) - Recuerdos de la Mayor Aiva: x 1</li>
+        <li class="rarity-e" data-img="Rocketeer_Driver.png">Misión 38 (Out of the Shadows) - Controlador de Cohetero: x 1</li>
+        <li class="rarity-u" data-img="Wires.png">Misión 42 (After Rain Comes) - Cables: x 5</li>
+        <li class="rarity-u" data-img="Battery.png">Misión 42 (After Rain Comes) - Batería: x 2</li>
+        <li class="rarity-e" data-img="">Misión 47 (Into the Fray) - Unidad de Pulso de Saltador: x 1</li>
+      </ul>
+    </section>
+  </script>
+
+  <script type="text/template" id="recyclables-content">
+    <div class="grid">
+      <!-- RECICLABLES PARA MISIÓN/TALLER -->
       <section class="card">
-        <h2>Objetos de Misión</h2>
+        <h2>Reciclables para Materiales de Misión/Taller</h2>
         <ul>
-          <li class="rarity-u" data-img="ARC_Alloy.png">Misión 2 (Cielos Más Claros) - Aleación ARC: 3x</li>
-          <li class="rarity-u" data-img="Wires.png">Misión 3 (Basura en Tesoro) - Cables: 6x</li>
-          <li class="rarity-u" data-img="Battery.png">Misión 3 (Basura en Tesoro) - Batería: 1x</li>
-          <li class="rarity-c" data-img="Metal_Parts.png">Misión 5 (Un Mal Presentimiento) - Partes de Metal: 10x</li>
-          <li class="rarity-u" data-img="Steel_Spring.png">Misión 5 (Un Mal Presentimiento) - Resorte de Acero: 5x</li>
-          <li class="rarity-u" data-img="Duct_Tape.png">Misión 5 (Un Mal Presentimiento) - Cinta Aislante: 5x</li>
-          <li class="rarity-r" data-img="Raider_Hatch_Key.png">Misión 6 (Reparaciones de Escotilla) - Llave de Escotilla Raider: 1x</li>
-          <li class="rarity-u" data-img="Fireball_Burner.png">Misión 10 (Lo Que Va, Vuelve) - Quemador de esferígneo: 1x</li>
-        </ul>
-      </section>
-
-      <!-- CHATARRIN UPGRADES -->
-      <section class="card">
-        <h2>Chatarrin</h2>
-        
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">2</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-u" data-img="Dog_Collar.png">Collar de Perro: 1x</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">3</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-u" data-img="Lemon.png">Limón: 3x</li>
-              <li class="rarity-u" data-img="Apricot.png">Albaricoque: 3x</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">4</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-u" data-img="Prickly_Pear.png">Higo Chumbo: 6x</li>
-              <li class="rarity-u" data-img="Olives.png">Aceitunas: 6x</li>
-              <li class="rarity-u" data-img="Cat_Bed.png">Cama de Gato: 1x</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">5</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-u" data-img="Mushroom.png">Seta: 12x</li>
-              <li class="rarity-u" data-img="Apricot.png">Albaricoque: 12x</li>
-              <li class="rarity-u" data-img="Very_Comfortable_Pillow.png">Almohada extracómoda: 3x</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- UTILITY STATION -->
-      <section class="card">
-        <h2>Puesto de Utilidad</h2>
-        
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">1</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-c" data-img="Plastic_Parts.png">Partes de Plástico: 50x</li>
-              <li class="rarity-u" data-img="ARC_Alloy.png">Aleación ARC: 6x</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">2</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-r" data-img="Damaged_Heat_Sink.png">Disipador de Calor Dañado: 2x</li>
-              <li class="rarity-r" data-img="Electrical_Components.png">Componentes Eléctricos: 5x</li>
-              <li class="rarity-u" data-img="Snitch_Scanner.png">Escáner Soplón: 6x</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">3</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-r" data-img="Fried_Motherboard.png">Placa base quemada: 3x</li>
-              <li class="rarity-r" data-img="Advanced_Electrical_Components.png">Componentes eléctricos avanzados: 5x</li>
-              <li class="rarity-e" data-img="Leaper_Pulse_Unit.png">Unidad de impulso de saltador: 4x</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- REFINER -->
-      <section class="card">
-        <h2>Refinadora</h2>
-        
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">1</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-c" data-img="Metal_Parts.png">Partes de Metal: 60x</li>
-              <li class="rarity-c" data-img="ARC_Powercell.png">Célula de Energía ARC: 5x</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">2</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-r" data-img="Toaster.png">Tostadora: 3x</li>
-              <li class="rarity-r" data-img="ARC_Motion_Core.png">Núcleo de Movimiento ARC: 5x</li>
-              <li class="rarity-u" data-img="Fireball_Burner.png">Quemador de esferígneo: 8x</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">3</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-r" data-img="Motor.png">Motor: 3x</li>
-              <li class="rarity-r" data-img="ARC_Circuitry.png">Sistema de circuitos ARC: 10x</li>
-              <li class="rarity-e" data-img="Bombardier_Cell.png">Célula de bombardero: 6x</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- COLUMNA 2 -->
-    <div>
-        <!-- GUNSMITH -->
-      <section class="card">
-        <h2>Armero</h2>
-        
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">1</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-c" data-img="Metal_Parts.png">Partes de Metal: 20x</li>
-              <li class="rarity-c" data-img="Rubber_Parts.png">Partes de Goma: 30x</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">2</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-r" data-img="Rusted_Tools.png">Equipo oxidado: 3x</li>
-              <li class="rarity-r" data-img="Mechanical_Components.png">Componentes Mecánicos: 5x</li>
-              <li class="rarity-r" data-img="Wasp_Driver.png">Controlador de Avispa: 8x</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">3</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-r" data-img="Rusted_Tools.png">Equipo oxidado: 3x</li>
-              <li class="rarity-r" data-img="Advanced_Mechanical_Components.png">Componentes mecánicos avanzados: 5x</li>
-              <li class="rarity-r" data-img="Sentinel_Firing_Core.png">Núcleo de disparo de centinela: 4x</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- GEAR BENCH -->
-      <section class="card">
-        <h2>Mesa de Equipamiento</h2>
-        
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">1</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-c" data-img="Plastic_Parts.png">Partes de Plástico: 25x</li>
-              <li class="rarity-c" data-img="Fabric.png">Tela: 30x</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">2</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-r" data-img="Power_Cable.png">Cable de Alimentación: 3x</li>
-              <li class="rarity-r" data-img="Electrical_Components.png">Componentes Eléctricos: 5x</li>
-              <li class="rarity-r" data-img="Hornet_Driver.png">Controlador de Avispón: 5x</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">3</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-r" data-img="Industrial_Battery.png">Batería industrial: 3x</li>
-              <li class="rarity-r" data-img="Advanced_Electrical_Components.png">Componentes eléctricos avanzados: 5x</li>
-              <li class="rarity-e" data-img="Bastion_Cell.png">Célula de bastión: 6x</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- MEDICAL LAB -->
-      <section class="card">
-        <h2>Laboratorio Médico</h2>
-        
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">1</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-c" data-img="Fabric.png">Tela: 50x</li>
-              <li class="rarity-u" data-img="ARC_Alloy.png">Aleación ARC: 6x</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">2</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-r" data-img="Cracked_Bioscanner.png">Bioescáner roto: 2x</li>
-              <li class="rarity-u" data-img="Durable_Cloth.png">Tela Resistente: 5x</li>
-              <li class="rarity-u" data-img="Tick_Pod.png">Cápsula de Garrapata: 8x</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">3</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-r" data-img="Rusted_Shut_Medical_Kit.png">Botiquín cerrado y oxidado: 3x</li>
-              <li class="rarity-c" data-img="Antiseptic.png">Antiséptico: 8x</li>
-              <li class="rarity-r" data-img="Surveyor_Vault.png">Depósito de vigilante: 5x</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- EXPLOSIVES STATION -->
-      <section class="card">
-        <h2>Puesto de Explosivos</h2>
-        
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">1</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-c" data-img="Chemicals.png">Producto Químico: 50x</li>
-              <li class="rarity-u" data-img="ARC_Alloy.png">Aleación ARC: 6x</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">2</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-r" data-img="Synthesized_Fuel.png">Combustible Sintético: 3x</li>
-              <li class="rarity-u" data-img="Crude_Explosives.png">Explosivos Rudimentarios: 5x</li>
-              <li class="rarity-c" data-img="Pop_Trigger.png">Gatillo de Tronador: 5x</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="station-group">
-          <div class="level-indicator">
-            <div class="level-number">3</div>
-            <div class="level-line"></div>
-          </div>
-          <div class="level-items">
-            <ul>
-              <li class="rarity-r" data-img="Laboratory_Reagents.png">Reactivos de laboratorio: 3x</li>
-              <li class="rarity-r" data-img="Explosive_Compound.png">Compuesto Explosivo: 5x</li>
-              <li class="rarity-e" data-img="Rocketeer_Driver.png">Controlador de cohetero: 3x</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- COLUMNA 3 -->
-    <div>
-      <!-- HIGH VALUE ITEMS -->
-      <section class="card">
-        <h2>Objetos de Alto Valor</h2>
-        
-        <div class="value-tabs">
-          <button class="value-tab active" data-value="3000">$3000+</button>
-          <button class="value-tab" data-value="2000">$2000-2999</button>
-          <button class="value-tab" data-value="1000">$1000-1999</button>
-        </div>
-
-        <div class="value-content active" data-content="3000">
-          <ul>
-            <li class="rarity-l" data-img="">Reactor Reina: $13,000</li>
-            <li class="rarity-e" data-img="Lance's_Mixtape_(5th_Edition).png">Cinta Mixtape de Lance (5ª Edición): $10,000</li>
-            <li class="rarity-e" data-img="Breathtaking_Snow_Globe.png">Globo de Nieve Impresionante: $7,000</li>
-            <li class="rarity-e" data-img="Bastion_Cell.png">Célula de bastión: $5,000</li>
-            <li class="rarity-e" data-img="Bombardier_Cell.png">Célula de bombardero: $5,000</li>
-            <li class="rarity-e" data-img="Leaper_Pulse_Unit.png">Unidad de impulso de saltador: $5,000</li>
-            <li class="rarity-r" data-img="Music_Box.png">Caja de Música: $5,000</li>
-            <li class="rarity-r" data-img="Playing_Cards.png">Cartas: $5,000</li>
-            <li class="rarity-r" data-img="Red_Coral_Jewelry.png">Joyería de Coral Rojo: $5,000</li>
-            <li class="rarity-e" data-img="Rocketeer_Driver.png">Controlador de cohetero: $5,000</li>
-            <li class="rarity-u" data-img="Spotter_Relay.png">Retransmisor Vigía: $5,000</li>
-            <li class="rarity-e" data-img="Power_Rod.png">Barra de Energía: $5,500</li>
-            <li class="rarity-e" data-img="Magnetic_Accelerator.png">Acelerador Magnético: $5,500</li>
-            <li class="rarity-c" data-img="Fine_Wristwatch.png">Reloj de Pulsera Fino: $3,000</li>
-            <li class="rarity-r" data-img="Music_Album.png">Álbum de Música: $3,000</li>
-            <li class="rarity-e" data-img="Mod_Components.png">Componentes de Modificación: $3,000</li>
-            <li class="rarity-r" data-img="Sentinel_Firing_Core.png">Núcleo de disparo de centinela: $3,000</li>
-            <li class="rarity-c" data-img="Silver_Teaspoon_Set.png">Juego de Cucharitas de Plata: $3,000</li>
-            <li class="rarity-c" data-img="Statuette.png">Estatuilla: $3,000</li>
-            <li class="rarity-r" data-img="">Jarrón: $3,000</li>
-          </ul>
-        </div>
-
-        <div class="value-content" data-content="2000">
-          <ul>
-            <li class="rarity-e" data-img="Exodus_Modules.png">Módulos Éxodo: $2,750</li>
-            <li class="rarity-c" data-img="Coffee_Pot.png">Cafetera: $2,000</li>
-            <li class="rarity-r" data-img="Cooling_Fan.png">Ventilador de Refrigeración: $2,000</li>
-            <li class="rarity-c" data-img="Dart_Board.png">Diana: $2,000</li>
-            <li class="rarity-r" data-img="Electrical_Components.png">Componentes Eléctricos: $2,000</li>
-            <li class="rarity-r" data-img="Hornet_Driver.png">Controlador de Avispón: $2,000</li>
-            <li class="rarity-r" data-img="Laboratory_Reagents.png">Reactivos de Laboratorio: $2,000</li>
-            <li class="rarity-r" data-img="Mechanical_Components.png">Componentes Mecánicos: $2,000</li>
-            <li class="rarity-c" data-img="Painted_Box.png">Caja Pintada: $2,000</li>
-            <li class="rarity-u" data-img="Poster_of_Natural_Wonders.png">Póster de Maravillas Naturales: $2,000</li>
-            <li class="rarity-u" data-img="Pottery.png">Cerámica: $2,000</li>
-            <li class="rarity-c" data-img="Rosary.png">Rosario: $2,000</li>
-            <li class="rarity-r" data-img="Rocket_Thruster.png">Propulsor de Cohete: $2,000</li>
-            <li class="rarity-u" data-img="Ruined_Accordion.png">Acordeón Arruinado: $2,000</li>
-            <li class="rarity-r" data-img="Ruined_Riot_Shield.png">Escudo Antidisturbios Arruinado: $2,000</li>
-            <li class="rarity-r" data-img="Rusted_Gear.png">Engranaje Oxidado: $2,000</li>
-            <li class="rarity-u" data-img="Snitch_Scanner.png">Escáner Soplón: $2,000</li>
-            <li class="rarity-r" data-img="Surveyor_Vault.png">Depósito de vigilante: $2,000</li>
-            <li class="rarity-r" data-img="Unusable_Weapon.png">Arma Inutilizable: $2,000</li>
-            <li class="rarity-c" data-img="Very_Comfortable_Pillow.png">Almohada extracómoda: $2,000</li>
-          </ul>
-        </div>
-
-        <div class="value-content" data-content="1000">
-          <ul>
-            <li class="rarity-r" data-img="Advanced_ARC_Powercell.png">Célula de Energía ARC Avanzada: $1,750</li>
-            <li class="rarity-r" data-img="Advanced_Electrical_Components.png">Componentes Eléctricos Avanzados: $1,750</li>
-            <li class="rarity-r" data-img="Advanced_Mechanical_Components.png">Componentes Mecánicos Avanzados: $1,750</li>
-            <li class="rarity-u" data-img="Agave.png">Agave: $1,000</li>
-            <li class="rarity-c" data-img="Air_Freshener.png">Limpiador Doméstico: $1,000</li>
-            <li class="rarity-r" data-img="Alarm_Clock.png">Despertador: $1,000</li>
-            <li class="rarity-r" data-img="Antiseptic.png">Antiséptico: $1,000</li>
-            <li class="rarity-r" data-img="ARC_Coolant.png">Refrigerante ARC: $1,000</li>
-            <li class="rarity-r" data-img="ARC_Flex_Rubber.png">Goma Flexible ARC: $1,000</li>
-            <li class="rarity-r" data-img="ARC_Motion_Core.png">Núcleo de Movimiento ARC: $1,000</li>
-            <li class="rarity-r" data-img="ARC_Performance_Steel.png">Acero de Rendimiento ARC: $1,000</li>
-            <li class="rarity-r" data-img="ARC_Synthetic_Resin.png">Resina Sintética ARC: $1,000</li>
-            <li class="rarity-r" data-img="ARC_Thermo_Lining.png">Revestimiento Térmico ARC: $1,000</li>
-            <li class="rarity-r" data-img="ARC_Circuitry.png">Sistema de circuitos ARC: $1,000</li>
-            <li class="rarity-r" data-img="Bicycle_Pump.png">Bomba de Bicicleta: $1,000</li>
-            <li class="rarity-c" data-img="Bloated_Tuna_Can.png">Lata de Atún Hinchada: $1,000</li>
-            <li class="rarity-r" data-img="Broken_Handheld_Radio.png">Radio de Mano Rota: $1,000</li>
-            <li class="rarity-r" data-img="Broken_Taser.png">Taser Roto: $1,000</li>
-            <li class="rarity-c" data-img="Cat_Bed.png">Cama de Gato: $1,000</li>
-            <li class="rarity-e" data-img="Complex_Gun_Parts.png">Partes de Arma Complejas: $1,000</li>
-            <li class="rarity-r" data-img="Coolant.png">Refrigerante: $1,000</li>
-            <li class="rarity-r" data-img="Cooling_Coil.png">Bobina de Refrigeración: $1,000</li>
-            <li class="rarity-r" data-img="Damaged_Heat_Sink.png">Disipador de Calor Dañado: $1,000</li>
-            <li class="rarity-u" data-img="Deflated_Football.png">Fútbol Desinflado: $1,000</li>
-            <li class="rarity-u" data-img="Duct_Tape.png">Cinta Aislante: $1,000</li>
-            <li class="rarity-c" data-img="Empty_Wine_Bottle.png">Botella de Vino Vacía: $1,000</li>
-            <li class="rarity-c" data-img="Expired_Pasta.png">Respirador Caducado: $1,000</li>
-            <li class="rarity-u" data-img="Fertilizer.png">Fertilizante: $1,000</li>
-            <li class="rarity-c" data-img="Film_Reel.png">Rollo de Película: $1,000</li>
-            <li class="rarity-r" data-img="Fried_Motherboard.png">Placa base quemada: $1,000</li>
-            <li class="rarity-r" data-img="Industrial_Battery.png">Batería Industrial: $1,000</li>
-            <li class="rarity-r" data-img="Industrial_Charger.png">Cargador Industrial: $1,000</li>
-            <li class="rarity-r" data-img="Industrial_Magnet.png">Imán Industrial: $1,000</li>
-            <li class="rarity-r" data-img="Motor.png">Motor: $1,000</li>
-            <li class="rarity-r" data-img="Portable_TV.png">TV Portátil: $1,000</li>
-            <li class="rarity-r" data-img="Power_Cable.png">Cable de Alimentación: $1,000</li>
-            <li class="rarity-u" data-img="Ripped_Safety_Vest.png">Chaleco de Seguridad Roto: $1,000</li>
-            <li class="rarity-c" data-img="Rubber_Duck.png">Pato de Goma: $1,000</li>
-            <li class="rarity-r" data-img="Rusted_Shut_Medical_Kit.png">Botiquín cerrado y oxidado: $1,000</li>
-            <li class="rarity-r" data-img="Rusted_Tools.png">Equipo oxidado: $1,000</li>
-            <li class="rarity-r" data-img="Spring_Cushion.png">Muelle Amortiguador: $1,000</li>
-            <li class="rarity-r" data-img="Toaster.png">Tostadora: $1,000</li>
-            <li class="rarity-c" data-img="Torn_Book.png">Libro Rasgado: $1,000</li>
-            <li class="rarity-r" data-img="Wasp_Driver.png">Controlador de Avispa: $1,000</li>
-            <li class="rarity-r" data-img="Water_Pump.png">Bomba de Agua: $1,000</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- RECYCLABLE QUEST MATERIALS -->
-      <section class="card">
-        <h2>Reciclables para Materiales de Quest/Workshop</h2>
-        <ul>
-          <li class="rarity-r"><span data-img="Antiseptic.png">Antiséptico</span>: 10x <span data-img="Chemicals.png">Producto Químico</span></li>
-          <li class="rarity-r"><span data-img="ARC_Coolant.png">Refrigerante ARC</span>: 16x <span data-img="Chemicals.png">Producto Químico</span></li>
-          <li class="rarity-u"><span data-img="Air_Freshener.png">Limpiador Doméstico</span>: 13x <span data-img="Chemicals.png">Producto Químico</span></li>
-          <li class="rarity-r"><span data-img="Laboratory_Reagents.png">Reactivos de Laboratorio</span>: 2x <span data-img="Chemicals.png">Producto Químico</span>, 2x <span data-img="Crude_Explosives.png">Explosivos Rudimentarios</span></li>
-          <li class="rarity-r"><span data-img="Broken_Handheld_Radio.png">Radio de Mano Rota</span>: 3x <span data-img="Sensors.png">Sensores</span>, 3x <span data-img="Wires.png">Cables</span></li>
-          <li class="rarity-r"><span data-img="Expired_Pasta.png">Respirador Caducado</span>: 8x <span data-img="Rubber_Parts.png">Partes de Goma</span>, 4x <span data-img="Fabric.png">Tela</span></li>
-          <li class="rarity-r"><span data-img="ARC_Flex_Rubber.png">Goma Flexible ARC</span>: 16x <span data-img="Rubber_Parts.png">Partes de Goma</span></li>
-          <li class="rarity-u"><span data-img="Crude_Explosives.png">Explosivos Rudimentarios</span>: 3x <span data-img="Chemicals.png">Producto Químico</span></li>
-          <li class="rarity-u"><span data-img="Durable_Cloth.png">Tela Resistente</span>: 6x <span data-img="Fabric.png">Tela</span></li>
+          <li class="rarity-r"><span data-img="Antiseptic.png">Antiséptico</span>: <span data-img="Chemicals.png">Producto Químico</span> x 10</li>
+          <li class="rarity-r"><span data-img="ARC_Coolant.png">Refrigerante ARC</span>: <span data-img="Chemicals.png">Producto Químico</span> x 16</li>
+          <li class="rarity-u"><span data-img="Air_Freshener.png">Limpiador Doméstico</span>: <span data-img="Chemicals.png">Producto Químico</span> x 13</li>
+          <li class="rarity-r"><span data-img="Laboratory_Reagents.png">Reactivos de Laboratorio</span>: <span data-img="Chemicals.png">Producto Químico</span> x 2, <span data-img="Crude_Explosives.png">Explosivos Rudimentarios</span> x 2</li>
+          <li class="rarity-r"><span data-img="Broken_Handheld_Radio.png">Radio de Mano Rota</span>: <span data-img="Sensors.png">Sensores</span> x 3, <span data-img="Wires.png">Cables</span> x 3</li>
+          <li class="rarity-r"><span data-img="Expired_Pasta.png">Respirador Caducado</span>: <span data-img="Rubber_Parts.png">Partes de Goma</span> x 8, <span data-img="Fabric.png">Tela</span> x 4</li>
+          <li class="rarity-r"><span data-img="ARC_Flex_Rubber.png">Goma Flexible ARC</span>: <span data-img="Rubber_Parts.png">Partes de Goma</span> x 16</li>
+          <li class="rarity-u"><span data-img="Crude_Explosives.png">Explosivos Rudimentarios</span>: <span data-img="Chemicals.png">Producto Químico</span> x 3</li>
+          <li class="rarity-u"><span data-img="Durable_Cloth.png">Tela Resistente</span>: <span data-img="Fabric.png">Tela</span> x 6</li>
         </ul>
       </section>
 
@@ -501,13 +85,13 @@
       <section class="card">
         <h2>Fuentes Reciclables de Aleación ARC</h2>
         <ul>
-          <li class="rarity-r" data-img="Damaged_Rocketeer_Driver.png">Controlador de Cohete Dañado: 7x</li>
-          <li class="rarity-u" data-img="Tick_Pod.png">Cápsula de Garrapata: 4x</li>
-          <li class="rarity-u" data-img="Burned_ARC_Circuitry.png">Circuitería ARC Quemada: 2x</li>
-          <li class="rarity-u" data-img="Damaged_ARC_Motion_Core.png">Núcleo de Movimiento ARC Dañado: 2x</li>
-          <li class="rarity-r" data-img="Wasp_Driver.png">Controlador de Avispa: 2x</li>
-          <li class="rarity-u" data-img="Damaged_ARC_Powercell.png">Célula de Energía ARC Dañada: 1x</li>
-          <li class="rarity-c" data-img="">Controlador de Avispa Dañado: 1x</li>
+          <li class="rarity-c" data-img="Damaged_Rocketeer_Driver.png">Controlador de Cohete Dañado: x 7</li>
+          <li class="rarity-u" data-img="Tick_Pod.png">Cápsula de Garrapata: x 4</li>
+          <li class="rarity-u" data-img="Burned_ARC_Circuitry.png">Circuitería ARC Quemada: x 2</li>
+          <li class="rarity-u" data-img="Damaged_ARC_Motion_Core.png">Núcleo de Movimiento ARC Dañado: x 2</li>
+          <li class="rarity-r" data-img="Wasp_Driver.png">Controlador de Avispa: x 2</li>
+          <li class="rarity-u" data-img="Damaged_ARC_Powercell.png">Célula de Energía ARC Dañada: x 1</li>
+          <li class="rarity-c" data-img="">Controlador de Avispa Dañado: x 1</li>
         </ul>
       </section>
 
@@ -515,28 +99,565 @@
       <section class="card">
         <h2>Reciclables para Componentes</h2>
         <ul>
-          <li class="rarity-r"><span data-img="Alarm_Clock.png">Reloj Despertador</span>: 1x <span data-img="Processor.png">Procesador</span>, 6x <span data-img="Plastic_Parts.png">Partes de Plástico</span></li>
-          <li class="rarity-r"><span data-img="Ruined_Accordion.png">Acordeón Arruinado</span>: 18x <span data-img="Rubber_Parts.png">Partes de Goma</span>, 3x <span data-img="Steel_Spring.png">Resorte de Acero</span></li>
-          <li class="rarity-r"><span data-img="Cooling_Coil.png">Bobina de Refrigeración</span>: 6x <span data-img="Chemicals.png">Producto Químico</span>, 2x <span data-img="Steel_Spring.png">Resorte de Acero</span></li>
-          <li class="rarity-r"><span data-img="ARC_Synthetic_Resin.png">Resina Sintética ARC</span>: 14x <span data-img="Plastic_Parts.png">Partes de Plástico</span></li>
-          <li class="rarity-r"><span data-img="ARC_Performance_Steel.png">Acero de Rendimiento ARC</span>: 12x <span data-img="Metal_Parts.png">Partes de Metal</span></li>
-          <li class="rarity-u"><span data-img="Ripped_Safety_Vest.png">Chaleco de Seguridad Roto</span>: 2x <span data-img="Magnet.png">Imán</span>, 13x <span data-img="Fabric.png">Tela</span></li>
-          <li class="rarity-r"><span data-img="ARC_Thermo_Lining.png">Revestimiento Térmico ARC</span>: 16x <span data-img="Fabric.png">Tela</span></li>
-          <li class="rarity-r"><span data-img="Spring_Cushion.png">Muelle Amortiguador</span>: 2x <span data-img="Durable_Cloth.png">Tela Resistente</span>, 2x <span data-img="Steel_Spring.png">Resorte de Acero</span></li>
-          <li class="rarity-r"><span data-img="Broken_Taser.png">Taser Roto</span>: 2x <span data-img="Battery.png">Batería</span>, 2x <span data-img="Wires.png">Cables</span></li>
-          <li class="rarity-u"><span data-img="Candle_Holder.png">Portavelas</span>: 8x <span data-img="Metal_Parts.png">Partes de Metal</span></li>
-          <li class="rarity-r"><span data-img="Coolant.png">Refrigerante</span>: 5x <span data-img="Chemicals.png">Producto Químico</span>, 2x <span data-img="Oil.png">Aceite</span></li>
-          <li class="rarity-r"><span data-img="Cooling_Fan.png">Ventilador de Refrigeración</span>: 14x <span data-img="Plastic_Parts.png">Partes de Plástico</span>, 4x <span data-img="Battery.png">Batería</span></li>
+          <li class="rarity-r"><span data-img="Alarm_Clock.png">Reloj Despertador</span>: <span data-img="Processor.png">Procesador</span> x 1, <span data-img="Plastic_Parts.png">Partes de Plástico</span> x 6</li>
+          <li class="rarity-r"><span data-img="Ruined_Accordion.png">Acordeón Arruinado</span>: <span data-img="Rubber_Parts.png">Partes de Goma</span> x 18, <span data-img="Steel_Spring.png">Resorte de Acero</span> x 3</li>
+          <li class="rarity-r"><span data-img="Cooling_Coil.png">Bobina de Refrigeración</span>: <span data-img="Chemicals.png">Producto Químico</span> x 6, <span data-img="Steel_Spring.png">Resorte de Acero</span> x 2</li>
+          <li class="rarity-r"><span data-img="ARC_Synthetic_Resin.png">Resina Sintética ARC</span>: <span data-img="Plastic_Parts.png">Partes de Plástico</span> x 14</li>
+          <li class="rarity-r"><span data-img="ARC_Performance_Steel.png">Acero de Rendimiento ARC</span>: <span data-img="Metal_Parts.png">Partes de Metal</span> x 12</li>
+          <li class="rarity-u"><span data-img="Ripped_Safety_Vest.png">Chaleco de Seguridad Roto</span>: <span data-img="Magnet.png">Imán</span> x 2, <span data-img="Fabric.png">Tela</span> x 13</li>
+          <li class="rarity-r"><span data-img="ARC_Thermo_Lining.png">Revestimiento Térmico ARC</span>: <span data-img="Fabric.png">Tela</span> x 16</li>
+          <li class="rarity-r"><span data-img="Spring_Cushion.png">Muelle Amortiguador</span>: <span data-img="Durable_Cloth.png">Tela Resistente</span> x 2, <span data-img="Steel_Spring.png">Resorte de Acero</span> x 2</li>
+          <li class="rarity-r"><span data-img="Broken_Taser.png">Taser Roto</span>: <span data-img="Battery.png">Batería</span> x 2, <span data-img="Wires.png">Cables</span> x 2</li>
+          <li class="rarity-u"><span data-img="Candle_Holder.png">Portavelas</span>: <span data-img="Metal_Parts.png">Partes de Metal</span> x 8</li>
+          <li class="rarity-r"><span data-img="Coolant.png">Refrigerante</span>: <span data-img="Chemicals.png">Producto Químico</span> x 5, <span data-img="Oil.png">Aceite</span> x 2</li>
+          <li class="rarity-r"><span data-img="Cooling_Fan.png">Ventilador de Refrigeración</span>: <span data-img="Plastic_Parts.png">Partes de Plástico</span> x 14, <span data-img="Battery.png">Batería</span> x 4</li>
         </ul>
       </section>
     </div>
+  </script>
 
-  </main>
+  <script type="text/template" id="workshops-content">
+    <div class="grid">
+      <!-- COLUMNA 1 -->
+      <div>
+        <!-- UTILITY STATION -->
+        <section class="card">
+          <h2>Puesto de Utilidad</h2>
+          
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">1</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-c" data-img="Plastic_Parts.png">Partes de Plástico: x 50</li>
+                <li class="rarity-u" data-img="ARC_Alloy.png">Aleación ARC: x 6</li>
+              </ul>
+            </div>
+          </div>
 
-  <div id="preview">
-    <img id="preview-img" src="" alt="Vista previa">
-  </div>
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">2</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-r" data-img="Damaged_Heat_Sink.png">Disipador de Calor Dañado: x 2</li>
+                <li class="rarity-u" data-img="Electrical_Components.png">Componentes Eléctricos: x 5</li>
+                <li class="rarity-u" data-img="Snitch_Scanner.png">Escáner Soplón: x 6</li>
+              </ul>
+            </div>
+          </div>
 
-  <script src="./js/script.js"></script>
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">3</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-r" data-img="Fried_Motherboard.png">Placa base quemada: x 3</li>
+                <li class="rarity-r" data-img="Advanced_Electrical_Components.png">Componentes eléctricos avanzados: x 5</li>
+                <li class="rarity-e" data-img="Leaper_Pulse_Unit.png">Unidad de impulso de saltador: x 4</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- REFINER -->
+        <section class="card">
+          <h2>Refinadora</h2>
+          
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">1</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-c" data-img="Metal_Parts.png">Partes de Metal: x 60</li>
+                <li class="rarity-c" data-img="ARC_Powercell.png">Célula de Energía ARC: x 5</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">2</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-r" data-img="Toaster.png">Tostadora: x 3</li>
+                <li class="rarity-r" data-img="ARC_Motion_Core.png">Núcleo de Movimiento ARC: x 5</li>
+                <li class="rarity-u" data-img="Fireball_Burner.png">Quemador de esferígneo: x 8</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">3</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-r" data-img="Motor.png">Motor: x 3</li>
+                <li class="rarity-r" data-img="ARC_Circuitry.png">Sistema de circuitos ARC: x 10</li>
+                <li class="rarity-e" data-img="Bombardier_Cell.png">Célula de bombardero: x 6</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- MEDICAL LAB -->
+        <section class="card">
+          <h2>Laboratorio Médico</h2>
+          
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">1</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-c" data-img="Fabric.png">Tela: x 50</li>
+                <li class="rarity-u" data-img="ARC_Alloy.png">Aleación ARC: x 6</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">2</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-r" data-img="Cracked_Bioscanner.png">Bioescáner roto: x 2</li>
+                <li class="rarity-u" data-img="Durable_Cloth.png">Tela Resistente: x 5</li>
+                <li class="rarity-u" data-img="Tick_Pod.png">Cápsula de Garrapata: x 8</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">3</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-r" data-img="Rusted_Shut_Medical_Kit.png">Botiquín cerrado y oxidado: x 3</li>
+                <li class="rarity-r" data-img="Antiseptic.png">Antiséptico: x 8</li>
+                <li class="rarity-r" data-img="Surveyor_Vault.png">Depósito de vigilante: x 5</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- CHATARRIN -->
+        <section class="card">
+          <h2>Chatarrin</h2>
+          
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">2</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-r" data-img="Dog_Collar.png">Collar de Perro: x 1</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">3</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-c" data-img="Lemon.png">Limón: x 3</li>
+                <li class="rarity-u" data-img="Apricot.png">Albaricoque: x 3</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">4</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-c" data-img="Prickly_Pear.png">Higo Chumbo: x 6</li>
+                <li class="rarity-c" data-img="Olives.png">Aceitunas: x 6</li>
+                <li class="rarity-c" data-img="Cat_Bed.png">Cama de Gato: x 1</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">5</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-u" data-img="Mushroom.png">Seta: x 12</li>
+                <li class="rarity-u" data-img="Apricot.png">Albaricoque: x 12</li>
+                <li class="rarity-c" data-img="Very_Comfortable_Pillow.png">Almohada extracómoda: x 3</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- COLUMNA 2 -->
+      <div>
+        <!-- GUNSMITH -->
+        <section class="card">
+          <h2>Armero</h2>
+          
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">1</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-c" data-img="Metal_Parts.png">Partes de Metal: x 20</li>
+                <li class="rarity-c" data-img="Rubber_Parts.png">Partes de Goma: x 30</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">2</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-r" data-img="Rusted_Tools.png">Equipo oxidado: x 3</li>
+                <li class="rarity-r" data-img="Mechanical_Components.png">Componentes Mecánicos: x 5</li>
+                <li class="rarity-r" data-img="Wasp_Driver.png">Controlador de Avispa: x 8</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">3</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-r" data-img="Rusted_Tools.png">Equipo oxidado: x 3</li>
+                <li class="rarity-r" data-img="Advanced_Mechanical_Components.png">Componentes mecánicos avanzados: x 5</li>
+                <li class="rarity-r" data-img="Sentinel_Firing_Core.png">Núcleo de disparo de centinela: x 4</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- GEAR BENCH -->
+        <section class="card">
+          <h2>Mesa de Equipamiento</h2>
+          
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">1</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-c" data-img="Plastic_Parts.png">Partes de Plástico: x 25</li>
+                <li class="rarity-c" data-img="Fabric.png">Tela: x 30</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">2</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-r" data-img="Power_Cable.png">Cable de Alimentación: x 3</li>
+                <li class="rarity-u" data-img="Electrical_Components.png">Componentes Eléctricos: x 5</li>
+                <li class="rarity-r" data-img="Hornet_Driver.png">Controlador de Avispón: x 5</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">3</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-r" data-img="Industrial_Battery.png">Batería industrial: x 3</li>
+                <li class="rarity-r" data-img="Advanced_Electrical_Components.png">Componentes eléctricos avanzados: x 5</li>
+                <li class="rarity-e" data-img="Bastion_Cell.png">Célula de bastión: x 6</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- EXPLOSIVES STATION -->
+        <section class="card">
+          <h2>Puesto de Explosivos</h2>
+          
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">1</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-c" data-img="Chemicals.png">Producto Químico: x 50</li>
+                <li class="rarity-u" data-img="ARC_Alloy.png">Aleación ARC: x 6</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">2</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-r" data-img="Synthesized_Fuel.png">Combustible Sintético: x 3</li>
+                <li class="rarity-u" data-img="Crude_Explosives.png">Explosivos Rudimentarios: x 5</li>
+                <li class="rarity-c" data-img="Pop_Trigger.png">Gatillo de Tronador: x 5</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">3</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-r" data-img="Laboratory_Reagents.png">Reactivos de laboratorio: x 3</li>
+                <li class="rarity-r" data-img="Explosive_Compound.png">Compuesto Explosivo: x 5</li>
+                <li class="rarity-e" data-img="Rocketeer_Driver.png">Controlador de cohetero: x 3</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/template" id="highvalue-content">
+    <div class="grid">
+      <!-- BLOQUE 1: $3000+ -->
+      <section class="card">
+        <h2>$3000+</h2>
+        <ul>
+          <li class="rarity-l" data-img="">Reactor Reina: $13,000</li>
+          <li class="rarity-e" data-img="Lance's_Mixtape_(5th_Edition).png">Cinta Mixtape de Lance (5ª Edición): $10,000</li>
+          <li class="rarity-e" data-img="Breathtaking_Snow_Globe.png">Globo de Nieve Impresionante: $7,000</li>
+          <li class="rarity-e" data-img="Power_Rod.png">Barra de Energía: $5,500</li>
+          <li class="rarity-e" data-img="Magnetic_Accelerator.png">Acelerador Magnético: $5,500</li>
+          <li class="rarity-e" data-img="Bastion_Cell.png">Célula de bastión: $5,000</li>
+          <li class="rarity-e" data-img="Bombardier_Cell.png">Célula de bombardero: $5,000</li>
+          <li class="rarity-e" data-img="Leaper_Pulse_Unit.png">Unidad de impulso de saltador: $5,000</li>
+          <li class="rarity-r" data-img="Music_Box.png">Caja de Música: $5,000</li>
+          <li class="rarity-r" data-img="Playing_Cards.png">Cartas: $5,000</li>
+          <li class="rarity-r" data-img="Red_Coral_Jewelry.png">Joyería de Coral Rojo: $5,000</li>
+          <li class="rarity-e" data-img="Rocketeer_Driver.png">Controlador de cohetero: $5,000</li>
+          <li class="rarity-u" data-img="Spotter_Relay.png">Retransmisor Vigía: $5,000</li>
+          <li class="rarity-c" data-img="Fine_Wristwatch.png">Reloj de Pulsera Fino: $3,000</li>
+          <li class="rarity-r" data-img="Music_Album.png">Álbum de Música: $3,000</li>
+          <li class="rarity-e" data-img="Mod_Components.png">Componentes de Modificación: $3,000</li>
+          <li class="rarity-r" data-img="Sentinel_Firing_Core.png">Núcleo de disparo de centinela: $3,000</li>
+          <li class="rarity-c" data-img="Silver_Teaspoon_Set.png">Juego de Cucharitas de Plata: $3,000</li>
+          <li class="rarity-c" data-img="Statuette.png">Estatuilla: $3,000</li>
+          <li class="rarity-r" data-img="">Jarrón: $3,000</li>
+        </ul>
+      </section>
+
+      <!-- BLOQUE 2: $2000-2999 -->
+      <section class="card">
+        <h2>$2000-2999</h2>
+        <ul>
+          <li class="rarity-e" data-img="Exodus_Modules.png">Módulos Éxodo: $2,750</li>
+          <li class="rarity-u" data-img="Air_Freshener.png">Limpiador Doméstico: $2,000</li>
+          <li class="rarity-r" data-img="Bicycle_Pump.png">Bomba de Bicicleta: $2,000</li>
+          <li class="rarity-c" data-img="Coffee_Pot.png">Cafetera: $2,000</li>
+          <li class="rarity-r" data-img="Broken_Guidance_System.png">Sistema de Guía Roto: $2,000</li>
+          <li class="rarity-r" data-img="Damaged_Rocketeer_Driver.png">Controlador de Cohete Dañado: $2,000</li>
+          <li class="rarity-u" data-img="Dart_Board.png">Diana: $2,000</li>
+          <li class="rarity-c" data-img="Film_Reel.png">Rollo de Película: $2,000</li>
+          <li class="rarity-r" data-img="Fried_Motherboard.png">Placa base quemada: $2,000</li>
+          <li class="rarity-r" data-img="Hornet_Driver.png">Controlador de Avispón: $2,000</li>
+          <li class="rarity-r" data-img="Laboratory_Reagents.png">Reactivos de Laboratorio: $2,000</li>
+          <li class="rarity-u" data-img="">Bombilla: $2,000</li>
+          <li class="rarity-r" data-img="Mechanical_Components.png">Componentes Mecánicos: $2,000</li>
+          <li class="rarity-c" data-img="Painted_Box.png">Caja Pintada: $2,000</li>
+          <li class="rarity-r" data-img="Portable_TV.png">TV Portátil: $2,000</li>
+          <li class="rarity-u" data-img="Poster_of_Natural_Wonders.png">Póster de Maravillas Naturales: $2,000</li>
+          <li class="rarity-u" data-img="Pottery.png">Cerámica: $2,000</li>
+          <li class="rarity-c" data-img="Rosary.png">Rosario: $2,000</li>
+          <li class="rarity-r" data-img="Rocket_Thruster.png">Propulsor de Cohete: $2,000</li>
+          <li class="rarity-r" data-img="Ruined_Accordion.png">Acordeón Arruinado: $2,000</li>
+          <li class="rarity-r" data-img="Ruined_Riot_Shield.png">Escudo Antidisturbios Arruinado: $2,000</li>
+          <li class="rarity-r" data-img="Rusted_Gear.png">Engranaje Oxidado: $2,000</li>
+          <li class="rarity-u" data-img="Snitch_Scanner.png">Escáner Soplón: $2,000</li>
+          <li class="rarity-r" data-img="Surveyor_Vault.png">Depósito de vigilante: $2,000</li>
+          <li class="rarity-r" data-img="">Bomba Turbo: $2,000</li>
+          <li class="rarity-r" data-img="Unusable_Weapon.png">Arma Inutilizable: $2,000</li>
+          <li class="rarity-c" data-img="Very_Comfortable_Pillow.png">Almohada extracómoda: $2,000</li>
+        </ul>
+      </section>
+
+      <!-- BLOQUE 3: $1000-1999 -->
+      <section class="card">
+        <h2>$1000-1999</h2>
+        <ul>
+          <li class="rarity-r" data-img="Advanced_Electrical_Components.png">Componentes Eléctricos Avanzados: $1,750</li>
+          <li class="rarity-r" data-img="Advanced_Mechanical_Components.png">Componentes Mecánicos Avanzados: $1,750</li>
+          <li class="rarity-u" data-img="Agave.png">Agave: $1,000</li>
+          <li class="rarity-r" data-img="Alarm_Clock.png">Despertador: $1,000</li>
+          <li class="rarity-r" data-img="Antiseptic.png">Antiséptico: $1,000</li>
+          <li class="rarity-r" data-img="ARC_Circuitry.png">Circuitos ARC: $1,000</li>
+          <li class="rarity-r" data-img="ARC_Coolant.png">Refrigerante ARC: $1,000</li>
+          <li class="rarity-r" data-img="ARC_Flex_Rubber.png">Goma Flexible ARC: $1,000</li>
+          <li class="rarity-r" data-img="ARC_Motion_Core.png">Núcleo de Movimiento ARC: $1,000</li>
+          <li class="rarity-r" data-img="ARC_Performance_Steel.png">Acero de Rendimiento ARC: $1,000</li>
+          <li class="rarity-r" data-img="ARC_Synthetic_Resin.png">Resina Sintética ARC: $1,000</li>
+          <li class="rarity-r" data-img="ARC_Thermo_Lining.png">Revestimiento Térmico ARC: $1,000</li>
+          <li class="rarity-c" data-img="Bloated_Tuna_Can.png">Lata de Atún Hinchada: $1,000</li>
+          <li class="rarity-r" data-img="Broken_Flashlight.png">Linterna Rota: $1,000</li>
+          <li class="rarity-r" data-img="Broken_Handheld_Radio.png">Radio de Mano Rota: $1,000</li>
+          <li class="rarity-r" data-img="Broken_Taser.png">Taser Roto: $1,000</li>
+          <li class="rarity-c" data-img="Cat_Bed.png">Cama de Gato: $1,000</li>
+          <li class="rarity-e" data-img="Complex_Gun_Parts.png">Partes de Arma Complejas: $1,000</li>
+          <li class="rarity-r" data-img="Coolant.png">Refrigerante: $1,000</li>
+          <li class="rarity-r" data-img="Cooling_Coil.png">Bobina de Refrigeración: $1,000</li>
+          <li class="rarity-r" data-img="Cracked_Bioscanner.png">Bioescáner Agrietado: $1,000</li>
+          <li class="rarity-r" data-img="Damaged_Heat_Sink.png">Disipador de Calor Dañado: $1,000</li>
+          <li class="rarity-u" data-img="Deflated_Football.png">Fútbol Desinflado: $1,000</li>
+          <li class="rarity-c" data-img="Empty_Wine_Bottle.png">Botella de Vino Vacía: $1,000</li>
+          <li class="rarity-c" data-img="Expired_Pasta.png">Pasta Caducada: $1,000</li>
+          <li class="rarity-r" data-img="">Compuesto Explosivo: $1,000</li>
+          <li class="rarity-u" data-img="Fertilizer.png">Fertilizante: $1,000</li>
+          <li class="rarity-r" data-img="Garlic_Press.png">Prensa de Ajo: $1,000</li>
+          <li class="rarity-r" data-img="Headphones.png">Auriculares: $1,000</li>
+          <li class="rarity-r" data-img="Humidifier.png">Humidificador: $1,000</li>
+          <li class="rarity-r" data-img="Industrial_Battery.png">Batería Industrial: $1,000</li>
+          <li class="rarity-r" data-img="Industrial_Charger.png">Cargador Industrial: $1,000</li>
+          <li class="rarity-r" data-img="Industrial_Magnet.png">Imán Industrial: $1,000</li>
+          <li class="rarity-r" data-img="Motor.png">Motor: $1,000</li>
+          <li class="rarity-u" data-img="Mushroom.png">Hongo: $1,000</li>
+          <li class="rarity-r" data-img="Polluted_Air_Filter.png">Filtro de Aire Contaminado: $1,000</li>
+          <li class="rarity-r" data-img="Power_Bank.png">Banco de Energía: $1,000</li>
+          <li class="rarity-r" data-img="Power_Cable.png">Cable de Alimentación: $1,000</li>
+          <li class="rarity-r" data-img="Radio.png">Radio: $1,000</li>
+          <li class="rarity-u" data-img="Remote_Control.png">Control Remoto: $1,000</li>
+          <li class="rarity-c" data-img="Resin.png">Resina: $1,000</li>
+          <li class="rarity-u" data-img="Ripped_Safety_Vest.png">Chaleco de Seguridad Roto: $1,000</li>
+          <li class="rarity-c" data-img="Rubber_Duck.png">Pato de Goma: $1,000</li>
+          <li class="rarity-r" data-img="Rubber_Pad.png">Almohadilla de Goma: $1,000</li>
+          <li class="rarity-r" data-img="Rusted_Shut_Medical_Kit.png">Botiquín cerrado y oxidado: $1,000</li>
+          <li class="rarity-r" data-img="Rusted_Tools.png">Herramientas Oxidadas: $1,000</li>
+          <li class="rarity-r" data-img="Spring_Cushion.png">Cojín de Resorte: $1,000</li>
+          <li class="rarity-r" data-img="Thermostat.png">Termostato: $1,000</li>
+          <li class="rarity-r" data-img="Toaster.png">Tostadora: $1,000</li>
+          <li class="rarity-c" data-img="Torn_Book.png">Libro Rasgado: $1,000</li>
+          <li class="rarity-r" data-img="Wasp_Driver.png">Controlador de Avispa: $1,000</li>
+          <li class="rarity-r" data-img="Water_Filter.png">Filtro de Agua: $1,000</li>
+          <li class="rarity-r" data-img="Water_Pump.png">Bomba de Agua: $1,000</li>
+        </ul>
+      </section>
+    </div>
+  </script>
+
+  <script>
+    // Sistema de navegación entre páginas
+    document.addEventListener('DOMContentLoaded', function() {
+      const navButtons = document.querySelectorAll('.nav-btn');
+      const contentContainer = document.getElementById('content-container');
+      
+      // Cargar la primera página por defecto
+      loadPage('quest');
+      
+      navButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Actualizar botones activos
+          navButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Cargar la página correspondiente
+          const page = this.getAttribute('data-page').replace('.html', '');
+          loadPage(page);
+        });
+      });
+      
+      function loadPage(page) {
+        const template = document.getElementById(page + '-content');
+        if (template) {
+          contentContainer.innerHTML = template.innerHTML;
+          // Reinicializar el preview de imágenes después de cargar el contenido
+          initImagePreview();
+        } else {
+          contentContainer.innerHTML = '<p>Error: Contenido no encontrado.</p>';
+        }
+      }
+      
+      function initImagePreview() {
+        const preview = document.getElementById('preview');
+        const previewImg = preview.querySelector('img');
+        
+        document.querySelectorAll('[data-img]').forEach(item => {
+          item.addEventListener('mouseenter', function(e) {
+            const imgSrc = this.getAttribute('data-img');
+            if (imgSrc) {
+              previewImg.src = `./gallery/${imgSrc}`;
+              preview.style.display = 'block';
+            }
+          });
+          
+          item.addEventListener('mousemove', function(e) {
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            const previewWidth = 100;
+            const previewHeight = 100;
+            const offset = 15;
+            
+            let x = e.clientX + offset;
+            let y = e.clientY + offset;
+            
+            if (x + previewWidth > viewportWidth) {
+              x = e.clientX - previewWidth - offset;
+            }
+            
+            if (y + previewHeight > viewportHeight) {
+              y = e.clientY - previewHeight - offset;
+            }
+            
+            preview.style.left = x + 'px';
+            preview.style.top = y + 'px';
+          });
+          
+          item.addEventListener('mouseleave', function() {
+            preview.style.display = 'none';
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>

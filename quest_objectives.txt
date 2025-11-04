@@ -1,0 +1,47 @@
+Quest | Objective(s) | Filter Quest | Filter Given By
+1 | Picking up the Pieces | - Visit any area on your map with a loot category icon - Loot 3 containers | Shani
+2 | Clearer Skies | - Destroy 3 ARC enemies - Get 3 ARC Alloy for Shani | Shani
+3 | Trash Into Treasure | - Collect 6 Wires - Collect a Battery | Shani
+4 | Off the Radar | - Visit a Field Depot - Repair the antenna on the roof of a Field Depot | Shani
+5 | A Bad Feeling | Search any ARC Probe or Courier | Celeste
+6 | The Right Tool | - Destroy a Fireball - Destroy a Hornet - Destroy a Turret | Tian Wen
+7 | Hatch Repairs | - Repair the leaking hydraulic pipes near a Raider Hatch - Search for a Hatch Key near the Raider Hatch | Shani
+8 | Safe Passage | Destroy 2 ARC enemies with any grenade | Apollo
+9 | Down to Earth | Deliver a Field Crate to a Supply Station and collect the reward | Shani
+10 | The Trifecta | - Destroy a Wasp and get a Wasp Driver for Shani - Destroy a Hornet and get a Hornet Driver for Shani - Destroy a Snitch and get a Snitch Scanner for Shani | Shani
+11 | A Better Use | Request a Supply Drop from a Call Station and loot it. | Tian Wen
+12 | What Goes Around | Destroy an ARC using a Fireball Burner | Apollo
+13 | Sparks Fly | Destroy a Hornet with a Trigger 'Nade or Snap Blast Grenade | Apollo
+14 | Greasing Her Palms | - On Dam Battlegrounds, visit the Locked Room in the Water Treatment Control building - On Spaceport, scope out the rocket thrusters outside the Rocket Assembly - On Buried City, visit the barricaded area on floor 6 of the Space Travel Building | Celeste
+15 | A First Foothold | -Stabilize the observation deck near the Ridgeline - Enable the comms terminal near the Olive Grove - Rotate the satellite dishes on the church roof, north of Data Vault - Nail down the roof plates on the Raider structure near Trapper's Glade | Apollo
+16 | Dormant Barons | Loot a Baron husk | Shani
+17 | Mixed Signals | - Destroy an ARC Surveyor - Obtain 1 Surveyor Vault | Tian Wen
+18 | What We Left Behind | - On Buried City, search 2 containers in the Raider Camp beneath the Parking Garage - On Dam Battlegrounds, search for anything significant in the South Swamp Outpost - On Spaceport, search for anything significant in Bilguun's Hideout, next to the Container Storage | Tian Wen
+19 | Doctor's Orders | - Obtain 2 Antiseptic - Obtain 1 Syringe - Obtain 1 Durable Cloth - Obtain 1 Great Mullein | Lance
+20 | Medical Merchandise | - On Spaceport, search 2 containers in the Departure Building's exam rooms - Search 3 containers in the Hospital in Buried City - On Dam Battlegrounds, search 2 containers in the Research & Administration building's medical room | Lance
+21 | A Reveal in Ruins | - Search for an ESR Analyzer inside any pharmacy in Buried City - Deliver the ESR Analyzer to Lance | Lance
+22 | Broken Monument | - Reach the hallowed grounds by the Scrap Yard Search for a compass near the broken-down vehicles - Search for the video tape near the cylindrical containers - Search for the old field rations in the Raider camp - Deliver the First Wave Tape to Tian Wen - Deliver First Wave Compass to Tian Wen - Deliver First Wave Rations to Tian Wen | Tian Wen
+23 | Marked for Death | Reach the Su Durante Warehouses in the Outskirts in Buried City | Tian Wen
+24 | Straight Record | - Reach Victory Ridge - Find the old EMP trap - Disable the first power switch - Disable the second power switch - Disable the third power switch - Shut down the EMP trap | Celeste
+25 | A Lay of the Land | - Reach the Jiangsu Warehouse - Find the shipping notes in the foreman's office - Locate the scanners on the upper floor of - Control Tower A6 Deliver 1 LiDAR Scanners to Shani | Shani
+26 | Market Correction | Locate the cache near Marano Station | Tian Wen
+27 | Keeping the Memory | - In one round, complete the following; - Reach the wreckage in the Formicai Hills - Search for the missing helmet - Return the helmet to the memorial | Celeste
+28 | Reduced to Rubble | - Take a photo of the Collapsed Highway - Go to the Broken Earth - Follow the trail of destruction through the Broken Earth - Investigate the unknown ARC machines | Shani
+29 | With a Trace | - Reach the Barren Clearing - Find signs of who brought down the ARC machines - Inspect the Adorned Wreckage - Inspect the communications device | Shani
+30 | Eyes on the Prize | - Find the secluded roof terrace south-west of the Southern Station, look for blue tarps - Rewire the solar panel using 3 Wires | Tian Wen
+31 | Echoes of Victory Ridge | - Reach Victory Ridge - Retrieve the battle plans from the hideout under the broken highway - Deliver Major Aiva's Patch to Celeste | Celeste
+32 | Industrial Espionage | - Find Tian Wen's weapon cache near the Gas Station in the Outskirts - Deliver the Burletta to the rival weapon cache | Tian Wen
+33 | Unexpected Initiative | - Reach the Grandioso Apartments in Buried City - Search for Fertilizer on the rooftop of the Grandioso Apartments - Reach Piazza Roma in Buried City - Search for a Water Pump in the broken rooftop gardens at Piazza Roma - Deliver a Water Pump to Tian Wen Deliver Fertilizer to Tian Wen | Tian Wen
+34 | A Symbol of Unification | - Reach the Formicai Outpost in Dam Battlegrounds - Locate the flag at the Formicai Outpost - Hoist the flag on the small platform overlooking the red lake | Celeste
+35 | Celeste's Journals | - Retrieve Celeste's Journals from the South Swamp Outpost - Retrieve Celeste's Journals from the northern outpost overlooking the Red Lakes - Deliver 2 Journals to Celeste | Celeste
+36 | Back on Top | - On Dam Battlegrounds, mark the Pattern House - On The Blue Gate, mark the white lookout tower south of the Warehouse Complex - On Spaceport, mark the South Trench Tower - On Buried City, mark the building with the mural in the Buried Properties | Tian Wen
+37 | The Major's Footlocker | - Search for Major Aiva's mementos in the apartments northwest of The Dam - Deliver Major Aiva's Mementos to Tian Wen | Tian Wen
+38 | Out of the Shadows | - Destroy a Rocketeer - Obtain a Rocketeer Driver | Shani
+39 | Eyes in the Sky | - On Dam Battlegrounds, install a LiDAR Scanner at the top of the Control Tower - On Spaceport, install a LiDAR Scanner at the Communications Tower - On Buried City, install a LiDAR Scanner on top of the Galleria sign | Shani
+40 | Our Presence Up There | - Visit the Pattern House in The Dam Find and interact with the Power Switch - Complete the antenna installation on the roof | Shani
+41 | Communication Hideout | - Reach the Red Tower in Old Town Find missing battery cell - Install the battery cell in the Generator - Enable the power on the Generator - Boot the antenna terminal near the Red Tower | Shani
+42 | After Rain Comes | - Find the flooded solar panels nearby the Grandioso Apartments - Repair the solar panels using 5 Wires and 2 Batteries | Celeste
+43 | A Balanced Harvest | - Go to the Research and Administration building - Locate Lab 1 on the upper floor above the reception | Celeste
+44 | Untended Garden | In one round, complete the following: - Go to the Hydroponic Dome Complex - Access the data archive in one of the domes - Upload the data to the computer terminal in any Field Depot | Celeste
+45 | The Root of the Matter | - In one round, complete the following: - Go to the Research Building in Buried City - Search for the seed vault in the "room with a great view" | Celeste
+46 | Water Troubles | In one round, complete the following: - Locate the Flood Access Tunnel under the Red Lake Berm - Find the intake to the District's Water Supply - Sample the water | Celeste

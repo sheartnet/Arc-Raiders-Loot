@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guía Esencial de Objetos - ARC Raiders</title>
+  <link rel="icon" type="image/png" href="./gallery/Favicon.png">
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
@@ -251,11 +252,11 @@
     <div class="grid">
       <!-- COLUMNA 1 -->
       <div>
-        <!-- UTILITY STATION -->
-        <section class="card" id="utility-station">
+        <!-- ARMERO -->
+        <section class="card" id="gunsmith-station">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-            <h2 style="margin: 0;">Puesto de Utilidad</h2>
-            <button class="reset-section-btn" data-section-id="utility-station">Resetear</button>
+            <h2 style="margin: 0;">Armero</h2>
+            <button class="reset-section-btn" data-section-id="gunsmith-station">Resetear</button>
           </div>
           
           <div class="station-group">
@@ -265,8 +266,8 @@
             </div>
             <div class="level-items">
               <ul>
-                <li class="rarity-c" data-img="Plastic_Parts.png" data-item-id="utility_l1_plastic">Partes de Plástico: x 50<span class="item-controls"><button class="counter-btn" data-item-id="utility_l1_plastic" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="utility_l1_plastic" data-change="1">+</button></span></li>
-                <li class="rarity-u" data-img="ARC_Alloy.png" data-item-id="utility_l1_arc">Aleación ARC: x 6<span class="item-controls"><button class="counter-btn" data-item-id="utility_l1_arc" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="utility_l1_arc" data-change="1">+</button></span></li>
+                <li class="rarity-c" data-img="Metal_Parts.png" data-item-id="gunsmith_l1_metal">Partes de Metal: x 20<span class="item-controls"><button class="counter-btn" data-item-id="gunsmith_l1_metal" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="gunsmith_l1_metal" data-change="1">+</button></span></li>
+                <li class="rarity-c" data-img="Rubber_Parts.png" data-item-id="gunsmith_l1_rubber">Partes de Goma: x 30<span class="item-controls"><button class="counter-btn" data-item-id="gunsmith_l1_rubber" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="gunsmith_l1_rubber" data-change="1">+</button></span></li>
               </ul>
             </div>
           </div>
@@ -278,9 +279,9 @@
             </div>
             <div class="level-items">
               <ul>
-                <li class="rarity-r" data-img="Damaged_Heat_Sink.png" data-item-id="utility_l2_heatsink">Disipador de Calor Dañado: x 2<span class="item-controls"><button class="counter-btn" data-item-id="utility_l2_heatsink" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="utility_l2_heatsink" data-change="1">+</button></span></li>
-                <li class="rarity-u" data-img="Electrical_Components.png" data-item-id="utility_l2_elec">Componentes Eléctricos: x 5<span class="item-controls"><button class="counter-btn" data-item-id="utility_l2_elec" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="utility_l2_elec" data-change="1">+</button></span></li>
-                <li class="rarity-u" data-img="Snitch_Scanner.png" data-item-id="utility_l2_snitch">Escáner Soplón: x 6<span class="item-controls"><button class="counter-btn" data-item-id="utility_l2_snitch" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="utility_l2_snitch" data-change="1">+</button></span></li>
+                <li class="rarity-r" data-img="Rusted_Tools.png" data-item-id="gunsmith_l2_tools">Equipo oxidado: x 3<span class="item-controls"><button class="counter-btn" data-item-id="gunsmith_l2_tools" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="gunsmith_l2_tools" data-change="1">+</button></span></li>
+                <li class="rarity-r" data-img="Mechanical_Components.png" data-item-id="gunsmith_l2_mech">Componentes Mecánicos: x 5<span class="item-controls"><button class="counter-btn" data-item-id="gunsmith_l2_mech" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="gunsmith_l2_mech" data-change="1">+</button></span></li>
+                <li class="rarity-r" data-img="Wasp_Driver.png" data-item-id="gunsmith_l2_wasp">Controlador de Avispa: x 8<span class="item-controls"><button class="counter-btn" data-item-id="gunsmith_l2_wasp" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="gunsmith_l2_wasp" data-change="1">+</button></span></li>
               </ul>
             </div>
           </div>
@@ -292,58 +293,9 @@
             </div>
             <div class="level-items">
               <ul>
-                <li class="rarity-r" data-img="Fried_Motherboard.png" data-item-id="utility_l3_mobo">Placa base quemada: x 3<span class="item-controls"><button class="counter-btn" data-item-id="utility_l3_mobo" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="utility_l3_mobo" data-change="1">+</button></span></li>
-                <li class="rarity-r" data-img="Advanced_Electrical_Components.png" data-item-id="utility_l3_advelec">Componentes eléctricos avanzados: x 5<span class="item-controls"><button class="counter-btn" data-item-id="utility_l3_advelec" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="utility_l3_advelec" data-change="1">+</button></span></li>
-                <li class="rarity-e" data-img="Leaper_Pulse_Unit.png" data-item-id="utility_l3_leaper">Unidad de impulso de saltador: x 4<span class="item-controls"><button class="counter-btn" data-item-id="utility_l3_leaper" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="utility_l3_leaper" data-change="1">+</button></span></li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <!-- REFINER -->
-        <section class="card" id="refiner-station">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-            <h2 style="margin: 0;">Refinadora</h2>
-            <button class="reset-section-btn" data-section-id="refiner-station">Resetear</button>
-          </div>
-          
-          <div class="station-group">
-            <div class="level-indicator">
-              <div class="level-number">1</div>
-              <div class="level-line"></div>
-            </div>
-            <div class="level-items">
-              <ul>
-                <li class="rarity-c" data-img="Metal_Parts.png" data-item-id="refiner_l1_metal">Partes de Metal: x 60<span class="item-controls"><button class="counter-btn" data-item-id="refiner_l1_metal" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="refiner_l1_metal" data-change="1">+</button></span></li>
-                <li class="rarity-c" data-img="ARC_Powercell.png" data-item-id="refiner_l1_power">Célula de Energía ARC: x 5<span class="item-controls"><button class="counter-btn" data-item-id="refiner_l1_power" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="refiner_l1_power" data-change="1">+</button></span></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="station-group">
-            <div class="level-indicator">
-              <div class="level-number">2</div>
-              <div class="level-line"></div>
-            </div>
-            <div class="level-items">
-              <ul>
-                <li class="rarity-r" data-img="Toaster.png" data-item-id="refiner_l2_toaster">Tostadora: x 3<span class="item-controls"><button class="counter-btn" data-item-id="refiner_l2_toaster" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="refiner_l2_toaster" data-change="1">+</button></span></li>
-                <li class="rarity-r" data-img="ARC_Motion_Core.png" data-item-id="refiner_l2_motion">Núcleo de Movimiento ARC: x 5<span class="item-controls"><button class="counter-btn" data-item-id="refiner_l2_motion" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="refiner_l2_motion" data-change="1">+</button></span></li>
-                <li class="rarity-u" data-img="Fireball_Burner.png" data-item-id="refiner_l2_fireball">Quemador de esferígneo: x 8<span class="item-controls"><button class="counter-btn" data-item-id="refiner_l2_fireball" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="refiner_l2_fireball" data-change="1">+</button></span></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="station-group">
-            <div class="level-indicator">
-              <div class="level-number">3</div>
-              <div class="level-line"></div>
-            </div>
-            <div class="level-items">
-              <ul>
-                <li class="rarity-r" data-img="Motor.png" data-item-id="refiner_l3_motor">Motor: x 3<span class="item-controls"><button class="counter-btn" data-item-id="refiner_l3_motor" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="refiner_l3_motor" data-change="1">+</button></span></li>
-                <li class="rarity-r" data-img="ARC_Circuitry.png" data-item-id="refiner_l3_circuit">Sistema de circuitos ARC: x 10<span class="item-controls"><button class="counter-btn" data-item-id="refiner_l3_circuit" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="refiner_l3_circuit" data-change="1">+</button></span></li>
-                <li class="rarity-e" data-img="Bombardier_Cell.png" data-item-id="refiner_l3_bomb">Célula de bombardero: x 6<span class="item-controls"><button class="counter-btn" data-item-id="refiner_l3_bomb" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="refiner_l3_bomb" data-change="1">+</button></span></li>
+                <li class="rarity-r" data-img="Rusted_Tools.png" data-item-id="gunsmith_l3_tools">Equipo oxidado: x 3<span class="item-controls"><button class="counter-btn" data-item-id="gunsmith_l3_tools" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="gunsmith_l3_tools" data-change="1">+</button></span></li>
+                <li class="rarity-r" data-img="Advanced_Mechanical_Components.png" data-item-id="gunsmith_l3_advmech">Componentes mecánicos avanzados: x 5<span class="item-controls"><button class="counter-btn" data-item-id="gunsmith_l3_advmech" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="gunsmith_l3_advmech" data-change="1">+</button></span></li>
+                <li class="rarity-r" data-img="Sentinel_Firing_Core.png" data-item-id="gunsmith_l3_sentinel">Núcleo de disparo de centinela: x 4<span class="item-controls"><button class="counter-btn" data-item-id="gunsmith_l3_sentinel" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="gunsmith_l3_sentinel" data-change="1">+</button></span></li>
               </ul>
             </div>
           </div>
@@ -393,6 +345,55 @@
                 <li class="rarity-r" data-img="Rusted_Shut_Medical_Kit.png" data-item-id="medical_l3_kit">Botiquín cerrado y oxidado: x 3<span class="item-controls"><button class="counter-btn" data-item-id="medical_l3_kit" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="medical_l3_kit" data-change="1">+</button></span></li>
                 <li class="rarity-r" data-img="Antiseptic.png" data-item-id="medical_l3_anti">Antiséptico: x 8<span class="item-controls"><button class="counter-btn" data-item-id="medical_l3_anti" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="medical_l3_anti" data-change="1">+</button></span></li>
                 <li class="rarity-r" data-img="Surveyor_Vault.png" data-item-id="medical_l3_surveyor">Depósito de vigilante: x 5<span class="item-controls"><button class="counter-btn" data-item-id="medical_l3_surveyor" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="medical_l3_surveyor" data-change="1">+</button></span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- REFINER -->
+        <section class="card" id="refiner-station">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h2 style="margin: 0;">Refinadora</h2>
+            <button class="reset-section-btn" data-section-id="refiner-station">Resetear</button>
+          </div>
+          
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">1</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-c" data-img="Metal_Parts.png" data-item-id="refiner_l1_metal">Partes de Metal: x 60<span class="item-controls"><button class="counter-btn" data-item-id="refiner_l1_metal" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="refiner_l1_metal" data-change="1">+</button></span></li>
+                <li class="rarity-c" data-img="ARC_Powercell.png" data-item-id="refiner_l1_power">Célula de Energía ARC: x 5<span class="item-controls"><button class="counter-btn" data-item-id="refiner_l1_power" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="refiner_l1_power" data-change="1">+</button></span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">2</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-r" data-img="Toaster.png" data-item-id="refiner_l2_toaster">Tostadora: x 3<span class="item-controls"><button class="counter-btn" data-item-id="refiner_l2_toaster" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="refiner_l2_toaster" data-change="1">+</button></span></li>
+                <li class="rarity-r" data-img="ARC_Motion_Core.png" data-item-id="refiner_l2_motion">Núcleo de Movimiento ARC: x 5<span class="item-controls"><button class="counter-btn" data-item-id="refiner_l2_motion" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="refiner_l2_motion" data-change="1">+</button></span></li>
+                <li class="rarity-u" data-img="Fireball_Burner.png" data-item-id="refiner_l2_fireball">Quemador de esferígneo: x 8<span class="item-controls"><button class="counter-btn" data-item-id="refiner_l2_fireball" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="refiner_l2_fireball" data-change="1">+</button></span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="station-group">
+            <div class="level-indicator">
+              <div class="level-number">3</div>
+              <div class="level-line"></div>
+            </div>
+            <div class="level-items">
+              <ul>
+                <li class="rarity-r" data-img="Motor.png" data-item-id="refiner_l3_motor">Motor: x 3<span class="item-controls"><button class="counter-btn" data-item-id="refiner_l3_motor" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="refiner_l3_motor" data-change="1">+</button></span></li>
+                <li class="rarity-r" data-img="ARC_Circuitry.png" data-item-id="refiner_l3_circuit">Sistema de circuitos ARC: x 10<span class="item-controls"><button class="counter-btn" data-item-id="refiner_l3_circuit" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="refiner_l3_circuit" data-change="1">+</button></span></li>
+                <li class="rarity-e" data-img="Bombardier_Cell.png" data-item-id="refiner_l3_bomb">Célula de bombardero: x 6<span class="item-controls"><button class="counter-btn" data-item-id="refiner_l3_bomb" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="refiner_l3_bomb" data-change="1">+</button></span></li>
               </ul>
             </div>
           </div>
@@ -462,11 +463,11 @@
 
       <!-- COLUMNA 2 -->
       <div>
-        <!-- GUNSMITH -->
-        <section class="card" id="gunsmith-station">
+        <!-- PUESTO DE UTILIDAD -->
+        <section class="card" id="utility-station">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-            <h2 style="margin: 0;">Armero</h2>
-            <button class="reset-section-btn" data-section-id="gunsmith-station">Resetear</button>
+            <h2 style="margin: 0;">Puesto de Utilidad</h2>
+            <button class="reset-section-btn" data-section-id="utility-station">Resetear</button>
           </div>
           
           <div class="station-group">
@@ -476,8 +477,8 @@
             </div>
             <div class="level-items">
               <ul>
-                <li class="rarity-c" data-img="Metal_Parts.png" data-item-id="gunsmith_l1_metal">Partes de Metal: x 20<span class="item-controls"><button class="counter-btn" data-item-id="gunsmith_l1_metal" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="gunsmith_l1_metal" data-change="1">+</button></span></li>
-                <li class="rarity-c" data-img="Rubber_Parts.png" data-item-id="gunsmith_l1_rubber">Partes de Goma: x 30<span class="item-controls"><button class="counter-btn" data-item-id="gunsmith_l1_rubber" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="gunsmith_l1_rubber" data-change="1">+</button></span></li>
+                <li class="rarity-c" data-img="Plastic_Parts.png" data-item-id="utility_l1_plastic">Partes de Plástico: x 50<span class="item-controls"><button class="counter-btn" data-item-id="utility_l1_plastic" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="utility_l1_plastic" data-change="1">+</button></span></li>
+                <li class="rarity-u" data-img="ARC_Alloy.png" data-item-id="utility_l1_arc">Aleación ARC: x 6<span class="item-controls"><button class="counter-btn" data-item-id="utility_l1_arc" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="utility_l1_arc" data-change="1">+</button></span></li>
               </ul>
             </div>
           </div>
@@ -489,9 +490,9 @@
             </div>
             <div class="level-items">
               <ul>
-                <li class="rarity-r" data-img="Rusted_Tools.png" data-item-id="gunsmith_l2_tools">Equipo oxidado: x 3<span class="item-controls"><button class="counter-btn" data-item-id="gunsmith_l2_tools" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="gunsmith_l2_tools" data-change="1">+</button></span></li>
-                <li class="rarity-r" data-img="Mechanical_Components.png" data-item-id="gunsmith_l2_mech">Componentes Mecánicos: x 5<span class="item-controls"><button class="counter-btn" data-item-id="gunsmith_l2_mech" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="gunsmith_l2_mech" data-change="1">+</button></span></li>
-                <li class="rarity-r" data-img="Wasp_Driver.png" data-item-id="gunsmith_l2_wasp">Controlador de Avispa: x 8<span class="item-controls"><button class="counter-btn" data-item-id="gunsmith_l2_wasp" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="gunsmith_l2_wasp" data-change="1">+</button></span></li>
+                <li class="rarity-r" data-img="Damaged_Heat_Sink.png" data-item-id="utility_l2_heatsink">Disipador de Calor Dañado: x 2<span class="item-controls"><button class="counter-btn" data-item-id="utility_l2_heatsink" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="utility_l2_heatsink" data-change="1">+</button></span></li>
+                <li class="rarity-u" data-img="Electrical_Components.png" data-item-id="utility_l2_elec">Componentes Eléctricos: x 5<span class="item-controls"><button class="counter-btn" data-item-id="utility_l2_elec" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="utility_l2_elec" data-change="1">+</button></span></li>
+                <li class="rarity-u" data-img="Snitch_Scanner.png" data-item-id="utility_l2_snitch">Escáner Soplón: x 6<span class="item-controls"><button class="counter-btn" data-item-id="utility_l2_snitch" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="utility_l2_snitch" data-change="1">+</button></span></li>
               </ul>
             </div>
           </div>
@@ -503,9 +504,9 @@
             </div>
             <div class="level-items">
               <ul>
-                <li class="rarity-r" data-img="Rusted_Tools.png" data-item-id="gunsmith_l3_tools">Equipo oxidado: x 3<span class="item-controls"><button class="counter-btn" data-item-id="gunsmith_l3_tools" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="gunsmith_l3_tools" data-change="1">+</button></span></li>
-                <li class="rarity-r" data-img="Advanced_Mechanical_Components.png" data-item-id="gunsmith_l3_advmech">Componentes mecánicos avanzados: x 5<span class="item-controls"><button class="counter-btn" data-item-id="gunsmith_l3_advmech" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="gunsmith_l3_advmech" data-change="1">+</button></span></li>
-                <li class="rarity-r" data-img="Sentinel_Firing_Core.png" data-item-id="gunsmith_l3_sentinel">Núcleo de disparo de centinela: x 4<span class="item-controls"><button class="counter-btn" data-item-id="gunsmith_l3_sentinel" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="gunsmith_l3_sentinel" data-change="1">+</button></span></li>
+                <li class="rarity-r" data-img="Fried_Motherboard.png" data-item-id="utility_l3_mobo">Placa base quemada: x 3<span class="item-controls"><button class="counter-btn" data-item-id="utility_l3_mobo" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="utility_l3_mobo" data-change="1">+</button></span></li>
+                <li class="rarity-r" data-img="Advanced_Electrical_Components.png" data-item-id="utility_l3_advelec">Componentes eléctricos avanzados: x 5<span class="item-controls"><button class="counter-btn" data-item-id="utility_l3_advelec" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="utility_l3_advelec" data-change="1">+</button></span></li>
+                <li class="rarity-e" data-img="Leaper_Pulse_Unit.png" data-item-id="utility_l3_leaper">Unidad de impulso de saltador: x 4<span class="item-controls"><button class="counter-btn" data-item-id="utility_l3_leaper" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="utility_l3_leaper" data-change="1">+</button></span></li>
               </ul>
             </div>
           </div>

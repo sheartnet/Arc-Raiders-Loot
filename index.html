@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía Esencial de Objetos - ARC Raiders</title>
+  <link rel="icon" type="image/png" href="./img/Favicon.png">
+  <link rel="stylesheet" href="./css/styles.css">
+  <style>
+    /* Pantalla de carga inicial */
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    
+    #loading-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    .loading-spinner {
+      width: 60px;
+      height: 60px;
+      position: relative;
+    }
+    
+    .loading-spinner .line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      animation: spin 1.5s linear infinite;
+      mask: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgba(0,0,0,0.1) 60deg,
+        rgba(0,0,0,0.3) 120deg,
+        rgba(0,0,0,0.5) 180deg,
+        rgba(0,0,0,0.7) 240deg,
+        rgba(0,0,0,0.9) 300deg,
+        black 330deg
+      );
+      -webkit-mask: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgba(0,0,0,0.1) 60deg,
+        rgba(0,0,0,0.3) 120deg,
+        rgba(0,0,0,0.5) 180deg,
+        rgba(0,0,0,0.7) 240deg,
+        rgba(0,0,0,0.9) 300deg,
+        black 330deg
+      );
+    }
+    
+    .loading-spinner .line::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 3px solid currentColor;
+      box-shadow: 
+        0 0 10px currentColor,
+        inset 0 0 10px currentColor;
+    }
+    
+    .loading-spinner .line:nth-child(1) {
+      color: #ff6b6b;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .loading-spinner .line:nth-child(2) {
+      color: #ffd700;
+      width: 85%;
+      height: 85%;
+      top: 7.5%;
+      left: 7.5%;
+    }
+    
+    .loading-spinner .line:nth-child(3) {
+      color: #90ee90;
+      width: 70%;
+      height: 70%;
+      top: 15%;
+      left: 15%;
+    }
+    
+    .loading-spinner .line:nth-child(4) {
+      color: #aecdf3;
+      width: 55%;
+      height: 55%;
+      top: 22.5%;
+      left: 22.5%;
+    }
+    
+    @keyframes pulse {
+      0%, 100% {
+        transform: scaleY(0.3);
+        opacity: 0.5;
+      }
+      50% {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+    }
+    
+    .loading-text {
+      color: #ffd700;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      font-family: Arial, sans-serif;
+    }
+    
+    @keyframes pulse {
+      0%, 100% {
+        transform: scaleY(0.3);
+        opacity: 0.5;
+      }
+      50% {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Ocultar contenido hasta que esté listo */
+    body:not(.content-ready) #content-container,
+    body:not(.content-ready) header,
+    body:not(.content-ready) nav {
+      opacity: 0;
+    }
+    
+    body.content-ready #content-container,
+    body.content-ready header,
+    body.content-ready nav {
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <!-- Pantalla de carga -->
+  <div id="loading-screen">
+    <div class="loading-spinner">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <div class="loading-text">Cargando...</div>
+  </div>
+  <header>
+    <h1>ARC RAIDERS — Guía Esencial de Objetos</h1>
+    <div class="language-selector">
+      <label for="lang-select">🌐</label>
+      <select id="lang-select">
+        <option value="es">Español</option>
+        <option value="en">English</option>
+        <option value="de">Deutsch</option>
+        <option value="fr">Français</option>
+        <option value="it">Italiano</option>
+        <option value="pt">Português</option>
+      </select>
+    </div>
+  </header>
+
+  <!-- NAVEGACIÓN PRINCIPAL -->
+  <nav class="main-nav">
+    <button class="nav-btn active" data-page="quest.html">Misión/Proyecto</button>
+    <button class="nav-btn" data-page="recyclables.html">Fuentes Reciclables</button>
+    <button class="nav-btn" data-page="workshops.html">Estaciones de Taller</button>
+    <button class="nav-btn" data-page="highvalue.html">Objetos de Alto Valor</button>
+  </nav>
+
+  <main id="content-container">
+    <div class="grid">
+      <!-- OBJETOS DE MISIÓN -->
+      <section class="card" id="mission-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <h2 style="margin: 0;">Objetos de Misión</h2>
+          <button class="reset-section-btn" data-section-id="mission-section">Resetear</button>
+        </div>
+        <ul>
+          <li class="rarity-u" data-img="arc_alloy.png" data-item-id="quest_m2_arc" data-quest-id="ss2"><span class="rarity-text">- <span></span></span>: x 3<span class="item-controls"><button class="counter-btn" data-item-id="quest_m2_arc" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="quest_m2_arc" data-change="1">+</button></span></li>
+          <li class="rarity-u" data-img="wires.png" data-item-id="quest_m3_wires" data-quest-id="ss3"><span class="rarity-text">- <span></span></span>: x 6<span class="item-controls"><button class="counter-btn" data-item-id="quest_m3_wires" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="quest_m3_wires" data-change="1">+</button></span></li>
+          <li class="rarity-u" data-img="battery.png" data-item-id="quest_m3_battery" data-quest-id="ss3"><span class="rarity-text">- <span></span></span>: x 1<span class="item-controls"><button class="counter-btn" data-item-id="quest_m3_battery" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="quest_m3_battery" data-change="1">+</button></span></li>
+          <li class="rarity-r" data-img="wasp_driver.png" data-item-id="quest_m10_wasp" data-quest-id="ss9"><span class="rarity-text">- <span></span></span>: x 2<span class="item-controls"><button class="counter-btn" data-item-id="quest_m10_wasp" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="quest_m10_wasp" data-change="1">+</button></span></li>
+          <li class="rarity-r" data-img="hornet_driver.png" data-item-id="quest_m10_hornet" data-quest-id="ss9"><span class="rarity-text">- <span></span></span>: x 2<span class="item-controls"><button class="counter-btn" data-item-id="quest_m10_hornet" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="quest_m10_hornet" data-change="1">+</button></span></li>
+          <li class="rarity-u" data-img="snitch_scanner.png" data-item-id="quest_m10_snitch" data-quest-id="ss9"><span class="rarity-text">- <span></span></span>: x 2<span class="item-controls"><button class="counter-btn" data-item-id="quest_m10_snitch" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="quest_m10_snitch" data-change="1">+</button></span></li>
+          <li class="rarity-r" data-img="surveyor_vault.png" data-item-id="quest_m17_surveyor" data-quest-id="ss10d"><span class="rarity-text">- <span></span></span>: x 1<span class="item-controls"><button class="counter-btn" data-item-id="quest_m17_surveyor" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="quest_m17_surveyor" data-change="1">+</button></span></li>
+          <li class="rarity-r" data-img="antiseptic.png" data-item-id="quest_m19_antisep" data-quest-id="ss10c"><span class="rarity-text">- <span></span></span>: x 2<span class="item-controls"><button class="counter-btn" data-item-id="quest_m19_antisep" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="quest_m19_antisep" data-change="1">+</button></span></li>
+          <li class="rarity-r" data-img="syringe.png" data-item-id="quest_m19_syringe" data-quest-id="ss10c"><span class="rarity-text">- <span></span></span>: x 1<span class="item-controls"><button class="counter-btn" data-item-id="quest_m19_syringe" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="quest_m19_syringe" data-change="1">+</button></span></li>
+          <li class="rarity-u" data-img="durable_cloth.png" data-item-id="quest_m19_cloth" data-quest-id="ss10c"><span class="rarity-text">- <span></span></span>: x 1<span class="item-controls"><button class="counter-btn" data-item-id="quest_m19_cloth" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="quest_m19_cloth" data-change="1">+</button></span></li>
+          <li class="rarity-u" data-img="great_mullein.png" data-item-id="quest_m19_mullein" data-quest-id="ss10c"><span class="rarity-text">- <span></span></span>: x 1<span class="item-controls"><button class="counter-btn" data-item-id="quest_m19_mullein" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="quest_m19_mullein" data-change="1">+</button></span></li>
+          <li class="rarity-u" data-img="wires.png" data-item-id="quest_m30_wires" data-quest-id="ss10m"><span class="rarity-text">- <span></span></span>: x 3<span class="item-controls"><button class="counter-btn" data-item-id="quest_m30_wires" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="quest_m30_wires" data-change="1">+</button></span></li>
+          <li class="rarity-u" data-img="fertilizer.png" data-item-id="quest_m33_fert" data-quest-id="ss10q"><span class="rarity-text">- <span></span></span>: x 1<span class="item-controls"><button class="counter-btn" data-item-id="quest_m33_fert" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="quest_m33_fert" data-change="1">+</button></span></li>
+          <li class="rarity-r" data-img="water_pump.png" data-item-id="quest_m33_pump" data-quest-id="ss10q"><span class="rarity-text">- <span></span></span>: x 1<span class="item-controls"><button class="counter-btn" data-item-id="quest_m33_pump" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="quest_m33_pump" data-change="1">+</button></span></li>
+          <li class="rarity-e" data-img="rocketeer_driver.png" data-item-id="quest_m38_rocket" data-quest-id="ss10v"><span class="rarity-text">- <span></span></span>: x 1<span class="item-controls"><button class="counter-btn" data-item-id="quest_m38_rocket" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="quest_m38_rocket" data-change="1">+</button></span></li>
+          <li class="rarity-u" data-img="wires.png" data-item-id="quest_m42_wires" data-quest-id="ss10y"><span class="rarity-text">- <span></span></span>: x 5<span class="item-controls"><button class="counter-btn" data-item-id="quest_m42_wires" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="quest_m42_wires" data-change="1">+</button></span></li>
+          <li class="rarity-u" data-img="battery.png" data-item-id="quest_m42_battery" data-quest-id="ss10y"><span class="rarity-text">- <span></span></span>: x 2<span class="item-controls"><button class="counter-btn" data-item-id="quest_m42_battery" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="quest_m42_battery" data-change="1">+</button></span></li>
+          <li class="rarity-e" data-img="leaper_pulse_unit.png" data-item-id="quest_m47_leaper" data-quest-id="ss11b"><span class="rarity-text">- <span></span></span>: x 1<span class="item-controls"><button class="counter-btn" data-item-id="quest_m47_leaper" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="quest_m47_leaper" data-change="1">+</button></span></li>
+        </ul>
+      </section>
+
+      <!-- OBJETOS DE PROYECTO (EXPEDICIÓN) -->
+      <section class="card" id="project-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <h2 style="margin: 0;">Objetos de Proyecto - Expedición</h2>
+          <button class="reset-section-btn" data-section-id="project-section">Resetear</button>
+        </div>
+        
+        <h3>Etapa 1/6 - Cimentación</h3>
+        <ul>
+          <li class="rarity-c" data-img="metal_parts.png" data-item-id="proj_metal"><span></span>: x 150<span class="item-controls"><button class="counter-btn" data-item-id="proj_metal" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="proj_metal" data-change="1">+</button></span></li>
+          <li class="rarity-c" data-img="rubber_parts.png" data-item-id="proj_rubber"><span></span>: x 200<span class="item-controls"><button class="counter-btn" data-item-id="proj_rubber" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="proj_rubber" data-change="1">+</button></span></li>
+          <li class="rarity-u" data-img="arc_alloy.png" data-item-id="proj_arc"><span></span>: x 80<span class="item-controls"><button class="counter-btn" data-item-id="proj_arc" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="proj_arc" data-change="1">+</button></span></li>
+          <li class="rarity-u" data-img="steel_spring.png" data-item-id="proj_spring"><span></span>: x 15<span class="item-controls"><button class="counter-btn" data-item-id="proj_spring" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="proj_spring" data-change="1">+</button></span></li>
+        </ul>
+
+        <h3>Etapa 2/6 - Sistemas Centrales</h3>
+        <ul>
+          <li class="rarity-u" data-img="durable_cloth.png" data-item-id="proj_cloth"><span></span>: x 35<span class="item-controls"><button class="counter-btn" data-item-id="proj_cloth" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="proj_cloth" data-change="1">+</button></span></li>
+          <li class="rarity-u" data-img="wires.png" data-item-id="proj_wires"><span></span>: x 30<span class="item-controls"><button class="counter-btn" data-item-id="proj_wires" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="proj_wires" data-change="1">+</button></span></li>
+          <li class="rarity-u" data-img="electrical_components.png" data-item-id="proj_elec"><span></span>: x 30<span class="item-controls"><button class="counter-btn" data-item-id="proj_elec" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="proj_elec" data-change="1">+</button></span></li>
+          <li class="rarity-r" data-img="cooling_fan.png" data-item-id="proj_fan"><span></span>: x 5<span class="item-controls"><button class="counter-btn" data-item-id="proj_fan" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="proj_fan" data-change="1">+</button></span></li>
+        </ul>
+
+        <h3>Etapa 3/6 - Estructura</h3>
+        <ul>
+          <li class="rarity-u" data-img="light_bulb.png" data-item-id="proj_bulb"><span></span>: x 5<span class="item-controls"><button class="counter-btn" data-item-id="proj_bulb" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="proj_bulb" data-change="1">+</button></span></li>
+          <li class="rarity-u" data-img="power_bank.png" data-item-id="proj_power"><span></span>: x 5<span class="item-controls"><button class="counter-btn" data-item-id="proj_power" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="proj_power" data-change="1">+</button></span></li>
+          <li class="rarity-r" data-img="sensors.png" data-item-id="proj_sensors"><span></span>: x 20<span class="item-controls"><button class="counter-btn" data-item-id="proj_sensors" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="proj_sensors" data-change="1">+</button></span></li>
+          <li class="rarity-e" data-img="exodus_modules.png" data-item-id="proj_exodus"><span></span>: x 1<span class="item-controls"><button class="counter-btn" data-item-id="proj_exodus" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="proj_exodus" data-change="1">+</button></span></li>
+        </ul>
+
+        <h3>Etapa 4/6 - Equipamiento</h3>
+        <ul>
+          <li class="rarity-r" data-img="humidifier.png" data-item-id="proj_humid"><span></span>: x 5<span class="item-controls"><button class="counter-btn" data-item-id="proj_humid" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="proj_humid" data-change="1">+</button></span></li>
+          <li class="rarity-r" data-img="advanced_electrical_components.png" data-item-id="proj_advelec"><span></span>: x 5<span class="item-controls"><button class="counter-btn" data-item-id="proj_advelec" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="proj_advelec" data-change="1">+</button></span></li>
+          <li class="rarity-e" data-img="magnetic_accelerator.png" data-item-id="proj_magnet"><span></span>: x 3<span class="item-controls"><button class="counter-btn" data-item-id="proj_magnet" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="proj_magnet" data-change="1">+</button></span></li>
+          <li class="rarity-e" data-img="leaper_pulse_unit.png" data-item-id="proj_leaper"><span></span>: x 3<span class="item-controls"><button class="counter-btn" data-item-id="proj_leaper" data-change="-1">-</button><span class="item-counter">0</span><button class="counter-btn" data-item-id="proj_leaper" data-change="1">+</button></span></li>
+        </ul>
+
+        <h3>Etapa 5/6 - Carga</h3>
+        <div style="padding: 0 1rem;">
+          <!-- Combate -->
+          <div class="cargo-category" data-item-id="cargo_combat" data-max="250000">
+            <div class="cargo-header">
+              <img src="img/stage_5_Combat1.png" alt="Combate 1" class="cargo-icon">
+              <img src="img/stage_5_Combat2.png" alt="Combate 2" class="cargo-icon">
+              <img src="img/stage_5_Combat3.png" alt="Combate 3" class="cargo-icon">
+              <img src="img/stage_5_Combat4.png" alt="Combate 4" class="cargo-icon">
+              <img src="img/stage_5_Combat5.png" alt="Combate 5" class="cargo-icon">
+              <span class="cargo-name">Combate</span>
+              <span class="item-controls">
+                <button class="counter-btn" data-item-id="cargo_combat" data-change="-1000">-</button>
+                <span class="item-counter">0</span>
+                <button class="counter-btn" data-item-id="cargo_combat" data-change="1000">+</button>
+              </span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill" data-item-id="cargo_combat" style="width: 0%"></div>
+              <span class="progress-bar-text">0 / 250,000</span>
+            </div>
+          </div>
+
+          <!-- Supervivencia -->
+          <div class="cargo-category" data-item-id="cargo_survival" data-max="100000">
+            <div class="cargo-header">
+              <img src="img/stage_5_Survival1.png" alt="Supervivencia 1" class="cargo-icon">
+              <img src="img/stage_5_Survival2.png" alt="Supervivencia 2" class="cargo-icon">
+              <img src="img/stage_5_Survival3.png" alt="Supervivencia 3" class="cargo-icon">
+              <img src="img/stage_5_Survival4.png" alt="Supervivencia 4" class="cargo-icon">
+              <img src="img/stage_5_Survival5.png" alt="Supervivencia 5" class="cargo-icon">
+              <span class="cargo-name">Supervivencia</span>
+              <span class="item-controls">
+                <button class="counter-btn" data-item-id="cargo_survival" data-change="-1000">-</button>
+                <span class="item-counter">0</span>
+                <button class="counter-btn" data-item-id="cargo_survival" data-change="1000">+</button>
+              </span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill" data-item-id="cargo_survival" style="width: 0%"></div>
+              <span class="progress-bar-text">0 / 100,000</span>
+            </div>
+          </div>
+
+          <!-- Provisiones -->
+          <div class="cargo-category" data-item-id="cargo_provisions" data-max="180000">
+            <div class="cargo-header">
+              <img src="img/stage_5_Provisions1.png" alt="Provisiones 1" class="cargo-icon">
+              <img src="img/stage_5_Provisions2.png" alt="Provisiones 2" class="cargo-icon">
+              <img src="img/stage_5_Provisions3.png" alt="Provisiones 3" class="cargo-icon">
+              <img src="img/stage_5_Provisions4.png" alt="Provisiones 4" class="cargo-icon">
+              <img src="img/stage_5_Provisions5.png" alt="Provisiones 5" class="cargo-icon">
+              <span class="cargo-name">Provisiones</span>
+              <span class="item-controls">
+                <button class="counter-btn" data-item-id="cargo_provisions" data-change="-1000">-</button>
+                <span class="item-counter">0</span>
+                <button class="counter-btn" data-item-id="cargo_provisions" data-change="1000">+</button>
+              </span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill" data-item-id="cargo_provisions" style="width: 0%"></div>
+              <span class="progress-bar-text">0 / 180,000</span>
+            </div>
+          </div>
+
+          <!-- Materiales -->
+          <div class="cargo-category" data-item-id="cargo_materials" data-max="300000">
+            <div class="cargo-header">
+              <img src="img/stage_5_Materials.png" alt="Materiales" class="cargo-icon">
+              <span class="cargo-name">Materiales</span>
+              <span class="item-controls">
+                <button class="counter-btn" data-item-id="cargo_materials" data-change="-1000">-</button>
+                <span class="item-counter">0</span>
+                <button class="counter-btn" data-item-id="cargo_materials" data-change="1000">+</button>
+              </span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill" data-item-id="cargo_materials" style="width: 0%"></div>
+              <span class="progress-bar-text">0 / 300,000</span>
+            </div>
+          </div>
+        </div>
+
+        <h3>Etapa 6/6 - Partida</h3>
+        <p style="font-style: italic; padding: 0 1rem;">Tu caravana está lista para partir en tu Expedición. Todos los items en tu alijo contribuirán a la Expedición, y tu próximo Raider puede ganar hasta 5 puntos de habilidad basados en el valor total de esos items.</p>
+      </section>
+    </div>
+  </main>
+
+  <!-- Preview de imagen -->
+  <div id="preview">
+    <div class="preview-header">
+      <img src="" alt="Preview">
+    </div>
+    <div class="preview-body">
+      <div class="preview-name"></div>
+      <div class="preview-description"></div>
+      <div class="preview-locations"></div>
+      <div class="preview-footer">
+        <div class="preview-type"></div>
+        <div class="preview-price"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts externos -->
+  <script src="./js/tracking.js"></script>
+  <script src="./js/database.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -890,7 +890,7 @@ function initImagePreview() {
         // Usar el nombre de archivo del HTML (puede tener mayúsculas correctas)
         // Si no se encuentra en BD, intentar con el nombre original
         const actualFilename = imgSrc;
-        const imgPath = `gallery/${actualFilename}`;
+        const imgPath = `img/${actualFilename}`;
         console.log(`📸 Intentando cargar imagen: ${imgPath}`);
         previewImg.src = imgPath;
         

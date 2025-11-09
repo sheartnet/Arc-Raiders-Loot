@@ -890,7 +890,7 @@ function initImagePreview() {
         // Usar el nombre de archivo del HTML (puede tener mayúsculas correctas)
         // Si no se encuentra en BD, intentar con el nombre original
         const actualFilename = imgSrc;
-        previewImg.src = `./img/${actualFilename}`;
+        previewImg.src = `img/${actualFilename}`;
         
         if (itemData) {
           console.log('Item data completo:', itemData); // Debug

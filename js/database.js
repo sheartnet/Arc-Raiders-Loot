@@ -760,7 +760,8 @@ function updateItemNames() {
   });
   
   // === 2. ACTUALIZAR ITEMS DE PROYECTO (li con data-img pero sin data-quest-id) ===
-  document.querySelectorAll('#project-section li[data-img]').forEach(element => {
+  // También actualizar workshops y otras páginas con la misma estructura
+  document.querySelectorAll('#project-section li[data-img], #workshops-section li[data-img], section.card li[data-img]').forEach(element => {
     const imgSrc = element.getAttribute('data-img');
     if (!imgSrc) return;
     

@@ -1,3 +1,26 @@
+/* Scrollbar styling for modern browsers */
+body::-webkit-scrollbar {
+  width: 12px;
+  background: #181e2a;
+}
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(120deg, #66ccff 0%, #ffaa00 100%);
+  border-radius: 8px;
+  box-shadow: 0 0 8px #0a0f1a;
+  border: 2px solid #181e2a;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(120deg, #ffaa00 0%, #66ccff 100%);
+}
+body::-webkit-scrollbar-corner {
+  background: #181e2a;
+}
+
+/* Firefox scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #66ccff #181e2a;
+}
 body {
   font-family: 'Rajdhani', 'Orbitron', 'Segoe UI', sans-serif;
   background: 
@@ -8,6 +31,13 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  min-width: 100vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 header {
@@ -251,6 +281,12 @@ h1 {
   border: 1px solid rgba(102, 204, 255, 0.15);
   position: relative;
   overflow: hidden;
+  margin-bottom: 2rem;
+ }
+
+/* Eliminar el margen inferior del último bloque de cada columna */
+.card:last-child {
+  margin-bottom: 0;
 }
 
 .card::before {

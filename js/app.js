@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', async function() {
   
   function preloadPages() {
     // Pre-cargar todas las páginas en el cache
-    const pages = ['recyclables', 'workshops', 'highvalue'];
+    const pages = ['recyclables', 'workshops', 'itemsvalue'];
     pages.forEach(page => {
       fetch(`./${page}.html`)
         .then(response => response.text())
